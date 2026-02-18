@@ -1,0 +1,52 @@
+[mysqld]
+# Frappe Framework Optimized Configuration
+
+# Character Set
+character-set-client-handshake = FALSE
+character-set-server = utf8mb4
+collation-server = utf8mb4_unicode_ci
+
+# Network
+bind-address = 0.0.0.0
+port = 3306
+max_connections = 200
+
+# Buffer Settings
+max_allowed_packet = 256M
+sort_buffer_size = 4M
+read_buffer_size = 2M
+read_rnd_buffer_size = 8M
+join_buffer_size = 4M
+
+# InnoDB Settings
+innodb_buffer_pool_size = 1G
+innodb_log_file_size = 256M
+innodb_log_buffer_size = 16M
+innodb_flush_log_at_trx_commit = 1
+innodb_flush_method = O_DIRECT
+innodb_file_per_table = 1
+
+# Query Cache (disabled for performance)
+query_cache_type = 0
+query_cache_size = 0
+
+# Logging
+slow_query_log = 1
+slow_query_log_file = /var/log/mysql/slow.log
+long_query_time = 2
+
+# Binary Logging
+log_bin = /var/log/mysql/mysql-bin.log
+expire_logs_days = 7
+max_binlog_size = 100M
+
+# Table Settings
+table_open_cache = 400
+table_definition_cache = 400
+
+[client]
+default-character-set = utf8mb4
+port = 3306
+
+[mysql]
+default-character-set = utf8mb4

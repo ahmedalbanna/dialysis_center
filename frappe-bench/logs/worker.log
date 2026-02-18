@@ -1,0 +1,54 @@
+2026-02-18 21:47:38,344 Worker rq:worker:9b5e5b013a684cc98f10e42127d95b02 started with PID 79576, version 1.15.1
+2026-02-18 21:47:38,344 Subscribing to channel rq:pubsub:9b5e5b013a684cc98f10e42127d95b02
+2026-02-18 21:47:38,348 *** Listening on teamspace-studios-this_studio-frappe-bench:short, teamspace-studios-this_studio-frappe-bench:default, teamspace-studios-this_studio-frappe-bench:long...
+2026-02-18 21:47:38,355 Cleaning registries for queue: teamspace-studios-this_studio-frappe-bench:short
+2026-02-18 21:47:38,358 Cleaning registries for queue: teamspace-studios-this_studio-frappe-bench:default
+2026-02-18 21:47:38,359 Cleaning registries for queue: teamspace-studios-this_studio-frappe-bench:long
+2026-02-18 21:47:47,104 Worker 9b5e5b013a684cc98f10e42127d95b02 [PID 79576]: warm shut down requested
+2026-02-18 21:47:47,112 Unsubscribing from channel rq:pubsub:9b5e5b013a684cc98f10e42127d95b02
+2026-02-18 23:01:58,421 Worker rq:worker:6c83a93bad644a518ee523f2bc0585ce started with PID 334174, version 1.15.1
+2026-02-18 23:01:58,421 Subscribing to channel rq:pubsub:6c83a93bad644a518ee523f2bc0585ce
+2026-02-18 23:01:58,423 *** Listening on teamspace-studios-this_studio-frappe-bench:short, teamspace-studios-this_studio-frappe-bench:default, teamspace-studios-this_studio-frappe-bench:long...
+2026-02-18 23:01:58,424 Cleaning registries for queue: teamspace-studios-this_studio-frappe-bench:short
+2026-02-18 23:01:58,426 Cleaning registries for queue: teamspace-studios-this_studio-frappe-bench:default
+2026-02-18 23:01:58,428 Cleaning registries for queue: teamspace-studios-this_studio-frappe-bench:long
+2026-02-18 23:02:51,888 Worker 6c83a93bad644a518ee523f2bc0585ce [PID 334174]: warm shut down requested
+2026-02-18 23:02:51,890 Unsubscribing from channel rq:pubsub:6c83a93bad644a518ee523f2bc0585ce
+
+WARNING: currentsite.txt is not supported anymore for setting default site. Use following command to set it as default site.
+$ bench use frappe.local
+2026-02-18 23:02:54,215 Worker rq:worker:0c19a6ce978e48dd825322e27def62a6 started with PID 338125, version 1.15.1
+2026-02-18 23:02:54,216 Subscribing to channel rq:pubsub:0c19a6ce978e48dd825322e27def62a6
+2026-02-18 23:02:54,217 *** Listening on teamspace-studios-this_studio-frappe-bench:short, teamspace-studios-this_studio-frappe-bench:default, teamspace-studios-this_studio-frappe-bench:long...
+2026-02-18 23:03:05,279 Worker 0c19a6ce978e48dd825322e27def62a6 [PID 338125]: warm shut down requested
+2026-02-18 23:03:05,284 Unsubscribing from channel rq:pubsub:0c19a6ce978e48dd825322e27def62a6
+2026-02-18 23:03:22,007 Worker rq:worker:7c9fd7804b2f4410b60a72c81fe22786 started with PID 340611, version 1.15.1
+2026-02-18 23:03:22,007 Subscribing to channel rq:pubsub:7c9fd7804b2f4410b60a72c81fe22786
+2026-02-18 23:03:22,008 *** Listening on teamspace-studios-this_studio-frappe-bench:short, teamspace-studios-this_studio-frappe-bench:default, teamspace-studios-this_studio-frappe-bench:long...
+2026-02-18 23:07:17,925 Worker 7c9fd7804b2f4410b60a72c81fe22786 [PID 340611]: warm shut down requested
+2026-02-18 23:07:17,936 Unsubscribing from channel rq:pubsub:7c9fd7804b2f4410b60a72c81fe22786
+2026-02-18 23:07:53,963 Worker rq:worker:cf67630b221e49cbb050418f0646b377 started with PID 360092, version 1.15.1
+2026-02-18 23:07:53,963 Subscribing to channel rq:pubsub:cf67630b221e49cbb050418f0646b377
+2026-02-18 23:07:53,975 *** Listening on teamspace-studios-this_studio-frappe-bench:short, teamspace-studios-this_studio-frappe-bench:default, teamspace-studios-this_studio-frappe-bench:long...
+2026-02-18 23:13:19,757 teamspace-studios-this_studio-frappe-bench:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.core.doctype.user.user.create_contact', kwargs={'user': <User: ahmedalbanna966@gmail.com>, 'ignore_mandatory': True}, method='frappe.core.doctype.user.user.create_contact', site='frappe.local', user='Administrator') (frappe.local::ef4207be-aaa3-49e5-a1de-b0e4f06a0e9a)
+2026-02-18 23:13:20,795 teamspace-studios-this_studio-frappe-bench:default: Job OK (frappe.local::ef4207be-aaa3-49e5-a1de-b0e4f06a0e9a)
+2026-02-18 23:13:20,795 Result is kept for 600 seconds
+2026-02-18 23:13:20,805 teamspace-studios-this_studio-frappe-bench:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.core.doctype.user.user.update_gravatar', kwargs={'name': 'ahmedalbanna966@gmail.com'}, method='frappe.core.doctype.user.user.update_gravatar', site='frappe.local', user='Administrator') (frappe.local::c5b0e130-64fe-45b9-9a1e-933ed5983a5e)
+2026-02-18 23:13:21,140 teamspace-studios-this_studio-frappe-bench:default: Job OK (frappe.local::c5b0e130-64fe-45b9-9a1e-933ed5983a5e)
+2026-02-18 23:13:21,140 Result is kept for 600 seconds
+2026-02-18 23:18:50,799 Worker cf67630b221e49cbb050418f0646b377 [PID 360092]: warm shut down requested
+2026-02-18 23:18:53,835 Cleaning registries for queue: teamspace-studios-this_studio-frappe-bench:short
+2026-02-18 23:18:53,840 Cleaning registries for queue: teamspace-studios-this_studio-frappe-bench:default
+2026-02-18 23:18:53,842 Cleaning registries for queue: teamspace-studios-this_studio-frappe-bench:long
+2026-02-18 23:25:57,698 Worker rq:worker:3aa920ce0f1f4774accd59dec89dddb4 started with PID 415998, version 1.15.1
+2026-02-18 23:25:57,699 Subscribing to channel rq:pubsub:3aa920ce0f1f4774accd59dec89dddb4
+2026-02-18 23:25:57,701 *** Listening on teamspace-studios-this_studio-frappe-bench:short, teamspace-studios-this_studio-frappe-bench:default, teamspace-studios-this_studio-frappe-bench:long...
+2026-02-18 23:25:57,702 Cleaning registries for queue: teamspace-studios-this_studio-frappe-bench:short
+2026-02-18 23:25:57,704 Cleaning registries for queue: teamspace-studios-this_studio-frappe-bench:default
+2026-02-18 23:25:57,716 Cleaning registries for queue: teamspace-studios-this_studio-frappe-bench:long
+2026-02-18 23:31:46,445 teamspace-studios-this_studio-frappe-bench:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.core.doctype.user.user.create_contact', kwargs={'user': <User: ahmedalbanna966@gmail.com>, 'ignore_mandatory': True}, method='frappe.core.doctype.user.user.create_contact', site='frappe.local', user='Administrator') (frappe.local::93d15041-d359-4144-ab83-beb0eab81425)
+2026-02-18 23:31:47,318 teamspace-studios-this_studio-frappe-bench:default: Job OK (frappe.local::93d15041-d359-4144-ab83-beb0eab81425)
+2026-02-18 23:31:47,318 Result is kept for 600 seconds
+2026-02-18 23:31:47,327 teamspace-studios-this_studio-frappe-bench:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.core.doctype.user.user.update_gravatar', kwargs={'name': 'ahmedalbanna966@gmail.com'}, method='frappe.core.doctype.user.user.update_gravatar', site='frappe.local', user='Administrator') (frappe.local::a6efc20e-7ffb-41fc-b03b-7afdc4d308c7)
+2026-02-18 23:31:47,663 teamspace-studios-this_studio-frappe-bench:default: Job OK (frappe.local::a6efc20e-7ffb-41fc-b03b-7afdc4d308c7)
+2026-02-18 23:31:47,663 Result is kept for 600 seconds

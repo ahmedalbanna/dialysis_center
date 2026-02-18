@@ -1,0 +1,84 @@
+
+# 2026-02-18 21:35:04.585890
++/usage 
+
+# 2026-02-18 21:35:14.240945
++/config 
+
+# 2026-02-18 21:36:52.361249
++/subagents 
+
+# 2026-02-18 21:40:16.242194
++/yolo 
+
+# 2026-02-18 21:40:45.047503
++setup frappe lastest version 
+
+# 2026-02-18 21:55:28.143149
++/subagents 
+
+# 2026-02-18 21:55:50.446707
++/models 
+
+# 2026-02-18 21:56:45.161423
++/subagents 
+
+# 2026-02-18 21:58:00.355138
++/subagents 
+
+# 2026-02-18 21:59:30.169078
++/subagents 
+
+# 2026-02-18 22:00:36.838505
++/subagents 
+
+# 2026-02-18 22:01:42.232540
++/subagents 
+
+# 2026-02-18 22:02:33.967605
++/subagents 
+
+# 2026-02-18 22:03:22.805438
++/subagents 
+
+# 2026-02-18 22:04:08.503322
++/subagents 
+
+# 2026-02-18 22:05:00.647477
++/subagents 
+
+# 2026-02-18 22:05:46.447423
++/subagents 
+
+# 2026-02-18 22:06:36.503242
++/subagents 
+
+# 2026-02-18 22:07:14.738740
++/subagents 
+
+# 2026-02-18 22:08:25.244648
++/subagents 
+
+# 2026-02-18 22:09:09.873836
++/subagents 
+
+# 2026-02-18 22:09:55.474254
++/subagents 
+
+# 2026-02-18 22:11:35.651409
++/memory init 
+
+# 2026-02-18 23:00:01.617566
++setup frappe nginx
+
+# 2026-02-18 23:04:55.905846
++/usage 
+
+# 2026-02-18 23:05:04.134990
++plase read this file we have problem problem.txt 
+
+# 2026-02-18 23:16:31.827557
++Setup docker compose for MariaDB Server and Redis Server with complete command config.
+
+# 2026-02-18 23:23:15.521787
++Set up additional service Nginx with Docker. make database backup and restore automaticly

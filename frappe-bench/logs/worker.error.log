@@ -1,0 +1,744 @@
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/utils.py:128: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return datetime.datetime.utcnow()
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/utils.py:128: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return datetime.datetime.utcnow()
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/utils.py:227: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return calendar.timegm(datetime.datetime.utcnow().utctimetuple())
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/utils.py:227: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return calendar.timegm(datetime.datetime.utcnow().utctimetuple())
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/utils.py:227: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return calendar.timegm(datetime.datetime.utcnow().utctimetuple())
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/utils.py:227: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return calendar.timegm(datetime.datetime.utcnow().utctimetuple())
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/utils.py:227: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return calendar.timegm(datetime.datetime.utcnow().utctimetuple())
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/utils.py:227: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return calendar.timegm(datetime.datetime.utcnow().utctimetuple())
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/utils.py:227: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return calendar.timegm(datetime.datetime.utcnow().utctimetuple())
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/utils.py:227: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return calendar.timegm(datetime.datetime.utcnow().utctimetuple())
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/utils.py:227: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return calendar.timegm(datetime.datetime.utcnow().utctimetuple())
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/utils.py:128: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return datetime.datetime.utcnow()
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/utils.py:128: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return datetime.datetime.utcnow()
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/utils.py:128: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return datetime.datetime.utcnow()
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/utils.py:128: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return datetime.datetime.utcnow()
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/utils.py:128: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return datetime.datetime.utcnow()
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/utils.py:128: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return datetime.datetime.utcnow()
+Exception in thread Thread-1:
+Traceback (most recent call last):
+  File "/system/conda/miniconda3/uv/python/cpython-3.12.12-linux-x86_64-gnu/lib/python3.12/threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/redis/client.py", line 1799, in run
+    pubsub.get_message(ignore_subscribe_messages=True, timeout=sleep_time)
+  File "/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/redis/client.py", line 1690, in get_message
+    response = self.parse_response(block=(timeout is None), timeout=timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/redis/client.py", line 1542, in parse_response
+    response = self._execute(conn, try_read)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/redis/client.py", line 1518, in _execute
+    return conn.retry.call_with_retry(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/redis/retry.py", line 49, in call_with_retry
+    fail(error)
+  File "/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/redis/client.py", line 1520, in <lambda>
+    lambda error: self._disconnect_raise_connect(conn, error),
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/redis/client.py", line 1507, in _disconnect_raise_connect
+    raise error
+  File "/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/redis/retry.py", line 46, in call_with_retry
+    return do()
+           ^^^^
+  File "/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/redis/client.py", line 1519, in <lambda>
+    lambda: command(*args, **kwargs),
+            ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/redis/client.py", line 1536, in try_read
+    if not conn.can_read(timeout=timeout):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/redis/connection.py", line 861, in can_read
+    return self._parser.can_read(timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/redis/connection.py", line 444, in can_read
+    return self.read_from_socket(timeout=timeout, raise_on_timeout=False)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/redis/connection.py", line 455, in read_from_socket
+    raise ConnectionError(SERVER_CLOSED_CONNECTION_ERROR)
+redis.exceptions.ConnectionError: Connection closed by server.
+Traceback (most recent call last):
+  File "/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/redis/connection.py", line 699, in connect
+    sock = self.retry.call_with_retry(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/redis/retry.py", line 46, in call_with_retry
+    return do()
+           ^^^^
+  File "/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/redis/connection.py", line 700, in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+            ^^^^^^^^^^^^^^^
+  File "/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/redis/connection.py", line 1002, in _connect
+    raise err
+  File "/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/redis/connection.py", line 990, in _connect
+    sock.connect(socket_address)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/teamspace/studios/this_studio/frappe-bench/apps/frappe/frappe/utils/bench_helper.py", line 114, in <module>
+    main()
+  File "/teamspace/studios/this_studio/frappe-bench/apps/frappe/frappe/utils/bench_helper.py", line 20, in main
+    click.Group(commands=commands)(prog_name="bench")
+  File "/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/click/core.py", line 1442, in __call__
+    return self.main(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/click/core.py", line 1363, in main
+    rv = self.invoke(ctx)
+         ^^^^^^^^^^^^^^^^
+  File "/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/click/core.py", line 1830, in invoke
+    return _process_result(sub_ctx.command.invoke(sub_ctx))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/click/core.py", line 1830, in invoke
+    return _process_result(sub_ctx.command.invoke(sub_ctx))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/click/core.py", line 1226, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/click/core.py", line 794, in invoke
+    return callback(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/teamspace/studios/this_studio/frappe-bench/apps/frappe/frappe/commands/scheduler.py", line 205, in start_worker
+    start_worker(
+  File "/teamspace/studios/this_studio/frappe-bench/apps/frappe/frappe/utils/background_jobs.py", line 321, in start_worker
+    worker.work(
+  File "/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/worker.py", line 456, in work
+    self.teardown()
+  File "/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/worker.py", line 1047, in teardown
+    self.unsubscribe()
+  File "/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/worker.py", line 624, in unsubscribe
+    self.pubsub.unsubscribe()
+  File "/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/redis/client.py", line 1659, in unsubscribe
+    return self.execute_command("UNSUBSCRIBE", *args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/redis/client.py", line 1479, in execute_command
+    self._execute(connection, connection.send_command, *args, **kwargs)
+  File "/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/redis/client.py", line 1518, in _execute
+    return conn.retry.call_with_retry(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/redis/retry.py", line 49, in call_with_retry
+    fail(error)
+  File "/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/redis/client.py", line 1520, in <lambda>
+    lambda error: self._disconnect_raise_connect(conn, error),
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/redis/client.py", line 1507, in _disconnect_raise_connect
+    raise error
+  File "/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/redis/retry.py", line 46, in call_with_retry
+    return do()
+           ^^^^
+  File "/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/redis/client.py", line 1519, in <lambda>
+    lambda: command(*args, **kwargs),
+            ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/redis/connection.py", line 847, in send_command
+    self.send_packed_command(
+  File "/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/redis/connection.py", line 817, in send_packed_command
+    self.connect()
+  File "/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/redis/connection.py", line 705, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 111 connecting to 127.0.0.1:11000. Connection refused.
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/utils.py:128: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return datetime.datetime.utcnow()
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/utils.py:128: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return datetime.datetime.utcnow()
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/utils.py:227: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return calendar.timegm(datetime.datetime.utcnow().utctimetuple())
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/utils.py:227: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return calendar.timegm(datetime.datetime.utcnow().utctimetuple())
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/utils.py:227: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return calendar.timegm(datetime.datetime.utcnow().utctimetuple())
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/utils.py:227: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return calendar.timegm(datetime.datetime.utcnow().utctimetuple())
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/utils.py:227: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return calendar.timegm(datetime.datetime.utcnow().utctimetuple())
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/utils.py:227: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return calendar.timegm(datetime.datetime.utcnow().utctimetuple())
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/utils.py:227: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return calendar.timegm(datetime.datetime.utcnow().utctimetuple())
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/utils.py:227: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return calendar.timegm(datetime.datetime.utcnow().utctimetuple())
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/utils.py:227: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return calendar.timegm(datetime.datetime.utcnow().utctimetuple())
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/utils.py:128: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return datetime.datetime.utcnow()
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/utils.py:128: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return datetime.datetime.utcnow()
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/utils.py:128: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return datetime.datetime.utcnow()
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/utils.py:128: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return datetime.datetime.utcnow()
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/utils.py:128: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return datetime.datetime.utcnow()
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/utils.py:128: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return datetime.datetime.utcnow()
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/utils.py:128: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return datetime.datetime.utcnow()
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/utils.py:128: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return datetime.datetime.utcnow()
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/utils.py:128: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return datetime.datetime.utcnow()
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/utils.py:128: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return datetime.datetime.utcnow()
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/utils.py:128: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return datetime.datetime.utcnow()
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/utils.py:128: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return datetime.datetime.utcnow()
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/utils.py:128: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return datetime.datetime.utcnow()
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/utils.py:128: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return datetime.datetime.utcnow()
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/utils.py:128: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return datetime.datetime.utcnow()
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/utils.py:128: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return datetime.datetime.utcnow()
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/utils.py:128: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return datetime.datetime.utcnow()
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/utils.py:128: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return datetime.datetime.utcnow()
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/utils.py:128: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return datetime.datetime.utcnow()
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/utils.py:128: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return datetime.datetime.utcnow()
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/utils.py:128: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return datetime.datetime.utcnow()
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/utils.py:128: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return datetime.datetime.utcnow()
+Exception in thread Thread-1:
+Traceback (most recent call last):
+  File "/system/conda/miniconda3/uv/python/cpython-3.12.12-linux-x86_64-gnu/lib/python3.12/threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/redis/client.py", line 1799, in run
+    pubsub.get_message(ignore_subscribe_messages=True, timeout=sleep_time)
+  File "/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/redis/client.py", line 1690, in get_message
+    response = self.parse_response(block=(timeout is None), timeout=timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/redis/client.py", line 1542, in parse_response
+    response = self._execute(conn, try_read)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/redis/client.py", line 1518, in _execute
+    return conn.retry.call_with_retry(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/redis/retry.py", line 49, in call_with_retry
+    fail(error)
+  File "/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/redis/client.py", line 1520, in <lambda>
+    lambda error: self._disconnect_raise_connect(conn, error),
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/redis/client.py", line 1507, in _disconnect_raise_connect
+    raise error
+  File "/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/redis/retry.py", line 46, in call_with_retry
+    return do()
+           ^^^^
+  File "/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/redis/client.py", line 1519, in <lambda>
+    lambda: command(*args, **kwargs),
+            ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/redis/client.py", line 1536, in try_read
+    if not conn.can_read(timeout=timeout):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/redis/connection.py", line 861, in can_read
+    return self._parser.can_read(timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/redis/connection.py", line 444, in can_read
+    return self.read_from_socket(timeout=timeout, raise_on_timeout=False)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/redis/connection.py", line 455, in read_from_socket
+    raise ConnectionError(SERVER_CLOSED_CONNECTION_ERROR)
+redis.exceptions.ConnectionError: Connection closed by server.
+Traceback (most recent call last):
+  File "/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/redis/connection.py", line 699, in connect
+    sock = self.retry.call_with_retry(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/redis/retry.py", line 46, in call_with_retry
+    return do()
+           ^^^^
+  File "/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/redis/connection.py", line 700, in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+            ^^^^^^^^^^^^^^^
+  File "/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/redis/connection.py", line 1002, in _connect
+    raise err
+  File "/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/redis/connection.py", line 990, in _connect
+    sock.connect(socket_address)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/teamspace/studios/this_studio/frappe-bench/apps/frappe/frappe/utils/bench_helper.py", line 114, in <module>
+    main()
+  File "/teamspace/studios/this_studio/frappe-bench/apps/frappe/frappe/utils/bench_helper.py", line 20, in main
+    click.Group(commands=commands)(prog_name="bench")
+  File "/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/click/core.py", line 1442, in __call__
+    return self.main(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/click/core.py", line 1363, in main
+    rv = self.invoke(ctx)
+         ^^^^^^^^^^^^^^^^
+  File "/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/click/core.py", line 1830, in invoke
+    return _process_result(sub_ctx.command.invoke(sub_ctx))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/click/core.py", line 1830, in invoke
+    return _process_result(sub_ctx.command.invoke(sub_ctx))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/click/core.py", line 1226, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/click/core.py", line 794, in invoke
+    return callback(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/teamspace/studios/this_studio/frappe-bench/apps/frappe/frappe/commands/scheduler.py", line 205, in start_worker
+    start_worker(
+  File "/teamspace/studios/this_studio/frappe-bench/apps/frappe/frappe/utils/background_jobs.py", line 321, in start_worker
+    worker.work(
+  File "/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/worker.py", line 456, in work
+    self.teardown()
+  File "/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/worker.py", line 1047, in teardown
+    self.unsubscribe()
+  File "/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/worker.py", line 624, in unsubscribe
+    self.pubsub.unsubscribe()
+  File "/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/redis/client.py", line 1659, in unsubscribe
+    return self.execute_command("UNSUBSCRIBE", *args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/redis/client.py", line 1479, in execute_command
+    self._execute(connection, connection.send_command, *args, **kwargs)
+  File "/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/redis/client.py", line 1518, in _execute
+    return conn.retry.call_with_retry(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/redis/retry.py", line 49, in call_with_retry
+    fail(error)
+  File "/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/redis/client.py", line 1520, in <lambda>
+    lambda error: self._disconnect_raise_connect(conn, error),
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/redis/client.py", line 1507, in _disconnect_raise_connect
+    raise error
+  File "/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/redis/retry.py", line 46, in call_with_retry
+    return do()
+           ^^^^
+  File "/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/redis/client.py", line 1519, in <lambda>
+    lambda: command(*args, **kwargs),
+            ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/redis/connection.py", line 847, in send_command
+    self.send_packed_command(
+  File "/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/redis/connection.py", line 817, in send_packed_command
+    self.connect()
+  File "/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/redis/connection.py", line 705, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 111 connecting to 127.0.0.1:11000. Connection refused.
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/utils.py:128: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return datetime.datetime.utcnow()
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/utils.py:128: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return datetime.datetime.utcnow()
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/utils.py:128: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return datetime.datetime.utcnow()
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/utils.py:128: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return datetime.datetime.utcnow()
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/utils.py:128: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return datetime.datetime.utcnow()
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/utils.py:128: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return datetime.datetime.utcnow()
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/utils.py:128: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return datetime.datetime.utcnow()
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/utils.py:128: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return datetime.datetime.utcnow()
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/worker.py:1170: DeprecationWarning: This process (pid=360092) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/utils.py:128: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return datetime.datetime.utcnow()
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/connections.py:58: DeprecationWarning: The `push_connection` function is deprecated. Pass the `connection` explicitly instead.
+  warnings.warn(
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/utils.py:128: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return datetime.datetime.utcnow()
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/utils.py:128: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return datetime.datetime.utcnow()
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/utils.py:227: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return calendar.timegm(datetime.datetime.utcnow().utctimetuple())
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/utils.py:128: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return datetime.datetime.utcnow()
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/utils.py:128: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return datetime.datetime.utcnow()
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/utils.py:128: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return datetime.datetime.utcnow()
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/utils.py:128: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return datetime.datetime.utcnow()
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/utils.py:227: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return calendar.timegm(datetime.datetime.utcnow().utctimetuple())
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/utils.py:227: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return calendar.timegm(datetime.datetime.utcnow().utctimetuple())
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/connections.py:72: DeprecationWarning: The `pop_connection` function is deprecated. Pass the `connection` explicitly instead.
+  warnings.warn(
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/utils.py:128: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return datetime.datetime.utcnow()
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/utils.py:128: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return datetime.datetime.utcnow()
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/utils.py:128: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return datetime.datetime.utcnow()
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/utils.py:128: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return datetime.datetime.utcnow()
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/utils.py:128: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return datetime.datetime.utcnow()
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/utils.py:128: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return datetime.datetime.utcnow()
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/utils.py:128: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return datetime.datetime.utcnow()
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/utils.py:128: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return datetime.datetime.utcnow()
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/worker.py:1170: DeprecationWarning: This process (pid=360092) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/utils.py:128: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return datetime.datetime.utcnow()
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/connections.py:58: DeprecationWarning: The `push_connection` function is deprecated. Pass the `connection` explicitly instead.
+  warnings.warn(
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/utils.py:128: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return datetime.datetime.utcnow()
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/utils.py:128: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return datetime.datetime.utcnow()
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/utils.py:227: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return calendar.timegm(datetime.datetime.utcnow().utctimetuple())
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/utils.py:128: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return datetime.datetime.utcnow()
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/utils.py:128: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return datetime.datetime.utcnow()
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/utils.py:128: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return datetime.datetime.utcnow()
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/utils.py:128: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return datetime.datetime.utcnow()
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/utils.py:227: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return calendar.timegm(datetime.datetime.utcnow().utctimetuple())
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/utils.py:227: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return calendar.timegm(datetime.datetime.utcnow().utctimetuple())
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/connections.py:72: DeprecationWarning: The `pop_connection` function is deprecated. Pass the `connection` explicitly instead.
+  warnings.warn(
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/utils.py:128: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return datetime.datetime.utcnow()
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/utils.py:128: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return datetime.datetime.utcnow()
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/utils.py:128: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return datetime.datetime.utcnow()
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/utils.py:128: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return datetime.datetime.utcnow()
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/utils.py:128: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return datetime.datetime.utcnow()
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/utils.py:128: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return datetime.datetime.utcnow()
+2026-02-18 23:18:50,791 Could not connect to Redis instance: Connection closed by server. Retrying in 1 seconds...
+Exception in thread Thread-1:
+Traceback (most recent call last):
+  File "/system/conda/miniconda3/uv/python/cpython-3.12.12-linux-x86_64-gnu/lib/python3.12/threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/redis/client.py", line 1799, in run
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/utils.py:128: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return datetime.datetime.utcnow()
+    pubsub.get_message(ignore_subscribe_messages=True, timeout=sleep_time)
+  File "/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/redis/client.py", line 1690, in get_message
+    --- Logging error ---
+response = self.parse_response(block=(timeout is None), timeout=timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/redis/client.py", line 1542, in parse_response
+    response = self._execute(conn, try_read)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/redis/client.py", line 1518, in _execute
+    return conn.retry.call_with_retry(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/redis/retry.py", line 49, in call_with_retry
+    fail(error)
+  File "/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/redis/client.py", line 1520, in <lambda>
+    lambda error: self._disconnect_raise_connect(conn, error),Traceback (most recent call last):
+
+  File "/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/worker.py", line 655, in dequeue_job_and_maintain_ttl
+    result = self.queue_class.dequeue_any(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/queue.py", line 1365, in dequeue_any
+    result = cls.lpop(queue_keys, timeout, connection=connection)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/queue.py", line 1290, in lpop
+    result = connection.blpop(queue_keys, timeout)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/redis/commands/core.py", line 2566, in blpop
+    return self.execute_command("BLPOP", *keys)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/redis/client.py", line 1269, in execute_command
+    return conn.retry.call_with_retry(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/redis/retry.py", line 49, in call_with_retry
+    fail(error)
+  File "/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/redis/client.py", line 1273, in <lambda>
+    lambda error: self._disconnect_raise(conn, error),
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/redis/client.py", line 1259, in _disconnect_raise
+    raise error
+  File "/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/redis/retry.py", line 46, in call_with_retry
+    return do()
+           ^^^^
+  File "/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/redis/client.py", line 1270, in <lambda>
+    lambda: self._send_command_parse_response(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/redis/client.py", line 1246, in _send_command_parse_response
+    return self.parse_response(conn, command_name, **options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/redis/client.py", line 1286, in parse_response
+    response = connection.read_response()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/redis/connection.py", line 874, in read_response
+    response = self._parser.read_response(disable_decoding=disable_decoding)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/redis/connection.py", line 493, in read_response
+    self.read_from_socket()
+  File "/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/redis/connection.py", line 455, in read_from_socket
+    raise ConnectionError(SERVER_CLOSED_CONNECTION_ERROR)
+redis.exceptions.ConnectionError: Connection closed by server.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/system/conda/miniconda3/uv/python/cpython-3.12.12-linux-x86_64-gnu/lib/python3.12/logging/__init__.py", line 1163, in emit
+    stream.write(msg + self.terminator)
+  File "/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/worker.py", line 996, in request_stop
+    self._shutdown()
+  File "/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/worker.py", line 1012, in _shutdown
+    raise StopRequested()
+rq.worker.StopRequested
+Call stack:
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/teamspace/studios/this_studio/frappe-bench/apps/frappe/frappe/utils/bench_helper.py", line 114, in <module>
+    main()
+  File "/teamspace/studios/this_studio/frappe-bench/apps/frappe/frappe/utils/bench_helper.py", line 20, in main
+    click.Group(commands=commands)(prog_name="bench")
+  File "/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/click/core.py", line 1442, in __call__
+    return self.main(*args, **kwargs)
+  File "/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/click/core.py", line 1363, in main
+    rv = self.invoke(ctx)
+  File "/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/click/core.py", line 1830, in invoke
+    return _process_result(sub_ctx.command.invoke(sub_ctx))
+  File "/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/click/core.py", line 1830, in invoke
+    return _process_result(sub_ctx.command.invoke(sub_ctx))
+  File "/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/click/core.py", line 1226, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+  File "/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/click/core.py", line 794, in invoke
+    return callback(*args, **kwargs)
+  File "/teamspace/studios/this_studio/frappe-bench/apps/frappe/frappe/commands/scheduler.py", line 205, in start_worker
+    start_worker(
+  File "/teamspace/studios/this_studio/frappe-bench/apps/frappe/frappe/utils/background_jobs.py", line 321, in start_worker
+    worker.work(
+  File "/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/worker.py", line 423, in work
+    result = self.dequeue_job_and_maintain_ttl(timeout, max_idle_time)
+  File "/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/worker.py", line 681, in dequeue_job_and_maintain_ttl
+    self.log.error(
+Message: 'Could not connect to Redis instance: %s Retrying in %d seconds...'
+Arguments: (ConnectionError('Connection closed by server.'), 1.0)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/redis/client.py", line 1507, in _disconnect_raise_connect
+    raise error
+  File "/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/redis/retry.py", line 46, in call_with_retry
+    return do()
+           ^^^^
+  File "/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/redis/client.py", line 1519, in <lambda>
+    lambda: command(*args, **kwargs),
+            ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/redis/client.py", line 1536, in try_read
+    if not conn.can_read(timeout=timeout):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/redis/connection.py", line 861, in can_read
+    return self._parser.can_read(timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/redis/connection.py", line 444, in can_read
+    return self.read_from_socket(timeout=timeout, raise_on_timeout=False)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/redis/connection.py", line 455, in read_from_socket
+    raise ConnectionError(SERVER_CLOSED_CONNECTION_ERROR)
+redis.exceptions.ConnectionError: Connection closed by server.
+2026-02-18 23:18:51,829 Could not connect to Redis instance: Error 111 connecting to 127.0.0.1:11000. Connection refused. Retrying in 2 seconds...
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/utils.py:128: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return datetime.datetime.utcnow()
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/utils.py:128: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return datetime.datetime.utcnow()
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/utils.py:227: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return calendar.timegm(datetime.datetime.utcnow().utctimetuple())
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/utils.py:227: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return calendar.timegm(datetime.datetime.utcnow().utctimetuple())
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/utils.py:227: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return calendar.timegm(datetime.datetime.utcnow().utctimetuple())
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/utils.py:227: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return calendar.timegm(datetime.datetime.utcnow().utctimetuple())
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/utils.py:227: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return calendar.timegm(datetime.datetime.utcnow().utctimetuple())
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/utils.py:227: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return calendar.timegm(datetime.datetime.utcnow().utctimetuple())
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/utils.py:227: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return calendar.timegm(datetime.datetime.utcnow().utctimetuple())
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/utils.py:227: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return calendar.timegm(datetime.datetime.utcnow().utctimetuple())
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/utils.py:227: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return calendar.timegm(datetime.datetime.utcnow().utctimetuple())
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/utils.py:128: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return datetime.datetime.utcnow()
+2026-02-18 23:23:23,285 Could not connect to Redis instance: Connection closed by server. Retrying in 4 seconds...
+2026-02-18 23:23:27,285 Could not connect to Redis instance: Error 111 connecting to 127.0.0.1:11000. Connection refused. Retrying in 8 seconds...
+2026-02-18 23:23:35,286 Could not connect to Redis instance: Error 111 connecting to 127.0.0.1:11000. Connection refused. Retrying in 16 seconds...
+2026-02-18 23:23:51,287 Could not connect to Redis instance: Error 111 connecting to 127.0.0.1:11000. Connection refused. Retrying in 32 seconds...
+2026-02-18 23:24:23,287 Could not connect to Redis instance: Error 111 connecting to 127.0.0.1:11000. Connection refused. Retrying in 60 seconds...
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/utils.py:128: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return datetime.datetime.utcnow()
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/utils.py:128: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return datetime.datetime.utcnow()
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/utils.py:128: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return datetime.datetime.utcnow()
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/utils.py:128: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return datetime.datetime.utcnow()
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/utils.py:227: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return calendar.timegm(datetime.datetime.utcnow().utctimetuple())
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/utils.py:227: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return calendar.timegm(datetime.datetime.utcnow().utctimetuple())
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/utils.py:227: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return calendar.timegm(datetime.datetime.utcnow().utctimetuple())
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/utils.py:227: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return calendar.timegm(datetime.datetime.utcnow().utctimetuple())
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/utils.py:227: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return calendar.timegm(datetime.datetime.utcnow().utctimetuple())
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/utils.py:128: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return datetime.datetime.utcnow()
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/utils.py:227: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return calendar.timegm(datetime.datetime.utcnow().utctimetuple())
+StartedJobRegistry cleanup: Moving job to FailedJobRegistry (due to AbandonedJobError)
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/utils.py:227: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return calendar.timegm(datetime.datetime.utcnow().utctimetuple())
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/utils.py:227: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return calendar.timegm(datetime.datetime.utcnow().utctimetuple())
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/utils.py:227: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return calendar.timegm(datetime.datetime.utcnow().utctimetuple())
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/utils.py:227: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return calendar.timegm(datetime.datetime.utcnow().utctimetuple())
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/utils.py:227: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return calendar.timegm(datetime.datetime.utcnow().utctimetuple())
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/utils.py:128: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return datetime.datetime.utcnow()
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/utils.py:128: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return datetime.datetime.utcnow()
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/utils.py:128: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return datetime.datetime.utcnow()
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/utils.py:128: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return datetime.datetime.utcnow()
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/utils.py:128: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return datetime.datetime.utcnow()
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/utils.py:128: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return datetime.datetime.utcnow()
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/worker.py:1170: DeprecationWarning: This process (pid=415998) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/utils.py:128: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return datetime.datetime.utcnow()
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/connections.py:58: DeprecationWarning: The `push_connection` function is deprecated. Pass the `connection` explicitly instead.
+  warnings.warn(
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/utils.py:128: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return datetime.datetime.utcnow()
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/utils.py:128: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return datetime.datetime.utcnow()
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/utils.py:227: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return calendar.timegm(datetime.datetime.utcnow().utctimetuple())
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/utils.py:128: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return datetime.datetime.utcnow()
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/utils.py:128: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return datetime.datetime.utcnow()
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/utils.py:128: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return datetime.datetime.utcnow()
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/utils.py:128: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return datetime.datetime.utcnow()
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/utils.py:227: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return calendar.timegm(datetime.datetime.utcnow().utctimetuple())
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/utils.py:227: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return calendar.timegm(datetime.datetime.utcnow().utctimetuple())
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/connections.py:72: DeprecationWarning: The `pop_connection` function is deprecated. Pass the `connection` explicitly instead.
+  warnings.warn(
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/utils.py:128: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return datetime.datetime.utcnow()
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/utils.py:128: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return datetime.datetime.utcnow()
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/utils.py:128: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return datetime.datetime.utcnow()
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/utils.py:128: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return datetime.datetime.utcnow()
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/utils.py:128: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return datetime.datetime.utcnow()
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/utils.py:128: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return datetime.datetime.utcnow()
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/utils.py:128: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return datetime.datetime.utcnow()
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/utils.py:128: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return datetime.datetime.utcnow()
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/worker.py:1170: DeprecationWarning: This process (pid=415998) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/utils.py:128: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return datetime.datetime.utcnow()
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/connections.py:58: DeprecationWarning: The `push_connection` function is deprecated. Pass the `connection` explicitly instead.
+  warnings.warn(
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/utils.py:128: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return datetime.datetime.utcnow()
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/utils.py:128: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return datetime.datetime.utcnow()
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/utils.py:227: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return calendar.timegm(datetime.datetime.utcnow().utctimetuple())
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/utils.py:128: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return datetime.datetime.utcnow()
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/utils.py:128: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return datetime.datetime.utcnow()
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/utils.py:128: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return datetime.datetime.utcnow()
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/utils.py:128: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return datetime.datetime.utcnow()
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/utils.py:227: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return calendar.timegm(datetime.datetime.utcnow().utctimetuple())
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/utils.py:227: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return calendar.timegm(datetime.datetime.utcnow().utctimetuple())
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/connections.py:72: DeprecationWarning: The `pop_connection` function is deprecated. Pass the `connection` explicitly instead.
+  warnings.warn(
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/utils.py:128: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return datetime.datetime.utcnow()
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/utils.py:128: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return datetime.datetime.utcnow()
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/utils.py:128: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return datetime.datetime.utcnow()
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/utils.py:128: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return datetime.datetime.utcnow()
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/utils.py:128: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return datetime.datetime.utcnow()
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/utils.py:128: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return datetime.datetime.utcnow()
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/utils.py:128: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return datetime.datetime.utcnow()
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/utils.py:128: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return datetime.datetime.utcnow()
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/utils.py:128: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return datetime.datetime.utcnow()
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/utils.py:128: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return datetime.datetime.utcnow()
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/utils.py:128: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return datetime.datetime.utcnow()
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/utils.py:128: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return datetime.datetime.utcnow()
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/utils.py:128: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return datetime.datetime.utcnow()
+/teamspace/studios/this_studio/frappe-bench/env/lib/python3.12/site-packages/rq/utils.py:128: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return datetime.datetime.utcnow()

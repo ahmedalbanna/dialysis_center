@@ -1,0 +1,119 @@
+version: '3.8'
+
+services:
+  nginx:
+    image: nginx:1.24-alpine
+    container_name: frappe-nginx
+    restart: unless-stopped
+    network_mode: "host"
+    volumes:
+      - ./nginx-config/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./nginx-config/frappe.conf:/etc/nginx/conf.d/frappe.conf:ro
+      - ./nginx-config/ssl:/etc/nginx/ssl:ro
+      - ~/frappe-bench/sites:/var/www/html/sites:ro
+      - ~/frappe-bench/logs:/var/log/frappe:rw
+    depends_on:
+      - mariadb
+      - redis-cache
+      - redis-queue
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost/api/method/ping"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+  mariadb:
+    image: mariadb:10.11.14
+    container_name: frappe-mariadb
+    restart: unless-stopped
+    command:
+      - --character-set-server=utf8mb4
+      - --collation-server=utf8mb4_unicode_ci
+      - --skip-character-set-client-handshake
+      - --bind-address=0.0.0.0
+      - --max_allowed_packet=256M
+      - --innodb-buffer-pool-size=1G
+      - --innodb-log-file-size=256M
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:-frappe@123}
+      MYSQL_DATABASE: ${MYSQL_DATABASE:-_b2165c2f32b36e51}
+      MYSQL_USER: ${MYSQL_USER:-_b2165c2f32b36e51}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD:-I4AuTAt1FS2TIsge}
+    ports:
+      - "3306:3306"
+    volumes:
+      - mariadb_data:/var/lib/mysql
+      - ./mariadb-config:/etc/mysql/conf.d
+    networks:
+      - frappe-network
+    healthcheck:
+      test: ["CMD", "healthcheck.sh", "--connect", "--innodb_initialized"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 30s
+
+  redis-cache:
+    image: redis:7.0.15-alpine
+    container_name: frappe-redis-cache
+    restart: unless-stopped
+    command: redis-server --maxmemory 512mb --maxmemory-policy allkeys-lru --appendonly no
+    ports:
+      - "13000:6379"
+    volumes:
+      - redis_cache_data:/data
+    networks:
+      - frappe-network
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+
+  redis-queue:
+    image: redis:7.0.15-alpine
+    container_name: frappe-redis-queue
+    restart: unless-stopped
+    command: redis-server --appendonly yes --appendfsync everysec
+    ports:
+      - "11000:6379"
+    volumes:
+      - redis_queue_data:/data
+    networks:
+      - frappe-network
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+
+  redis-socketio:
+    image: redis:7.0.15-alpine
+    container_name: frappe-redis-socketio
+    restart: unless-stopped
+    command: redis-server --appendonly no
+    ports:
+      - "12000:6379"
+    volumes:
+      - redis_socketio_data:/data
+    networks:
+      - frappe-network
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+
+volumes:
+  mariadb_data:
+    driver: local
+  redis_cache_data:
+    driver: local
+  redis_queue_data:
+    driver: local
+  redis_socketio_data:
+    driver: local
+
+networks:
+  frappe-network:
+    driver: bridge
