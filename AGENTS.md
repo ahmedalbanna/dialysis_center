@@ -834,5 +834,197 @@ Follow conventional commit format (enforced by commitlint):
 
 ---
 
-**Last Updated**: 2026-02-18
+**Last Updated**: 2026-02-19
+**Framework Version**: v15.100.1
+
+---
+
+## Notes: Documentation & Requirements Engineering Best Practices
+
+### Large Document Creation Strategy
+When creating comprehensive documentation (requirements, user stories, technical designs):
+
+**Approach:**
+- Create initial file with header and structure overview
+- Build incrementally using `find_and_replace_code` in manageable chunks (300-500 lines per update)
+- Each iteration should add one complete section or subsection
+- Always include clear section markers (##, ###) for easy navigation
+
+**Avoid:**
+- Attempting to create entire large documents (1000+ lines) in a single `create_file` call
+- This can lead to JSON parsing errors and incomplete file creation
+
+### Requirements Documentation Workflow
+**Successful Pattern Demonstrated:**
+1. Start with **Functional Requirements** document
+   - Executive summary and objectives
+   - Detailed requirements by module (FR-XXX-XXX format)
+   - Non-functional requirements (NFR-XXX-XXX format)
+   - Include glossary, risks, and approval sections
+   
+2. Generate **User Stories** from requirements
+   - Standard format: As a [role], I want [feature], So that [benefit]
+   - Include: Story ID, Epic, Priority (MoSCoW), Story Points, Acceptance Criteria, Dependencies
+   - Group by Epics for better organization
+   - Add sprint planning guidance and story point summaries
+   
+3. Create **Technical Design** from user stories
+   - Application architecture and module structure
+   - Complete DocType specifications (fields, types, validations)
+   - Database schema with indexes
+   - API endpoint designs with code examples
+   - Integration points and security design
+   - Performance considerations and caching strategies
+   - Implementation checklist with timeline
+
+### DocType Design Best Practices
+**Field Naming Conventions:**
+- Use `snake_case` for field names: `patient_name`, `appointment_date`
+- Prefix boolean fields: `is_active`, `has_batch_no`
+- Use descriptive names for better readability
+
+**DocType Types:**
+- **Master DocTypes**: Reference data (Patient, Staff, Machine) - use field-based naming
+- **Transaction DocTypes**: Operational records (Appointment, Session, Bill) - use auto-naming with year
+- **Submittable DocTypes**: Documents requiring workflow (Session, Bill) - add submit/cancel states
+
+**Naming Patterns:**
+- `{PREFIX}-{YYYY}-{#####}` for transactions (e.g., `PT-2026-00001`)
+- Field-based naming for masters
+- Keep prefixes short (2-3 characters)
+
+### API Design Pattern
+**Whitelist Functions Properly:**
+```python
+@frappe.whitelist()
+def api_function(param1, param2):
+    # Always validate inputs
+    # Return structured data
+    # Handle errors gracefully
+```
+
+**Base URL Pattern:** `/api/method/{app}.api.{module}.{function}`
+
+### Documentation Deliverables for Healthcare Systems
+For complex domain applications (like healthcare), provide:
+1. **Functional Requirements** (~1000 lines)
+   - 80+ detailed requirements
+   - Module-based organization
+   - Acceptance criteria
+
+2. **User Stories** (~1600 lines)
+   - 50-60 stories grouped by 10-12 epics
+   - 250-300 story points total
+   - Sprint planning reference
+
+3. **Technical Design** (~2100 lines)
+   - 25+ DocType specifications
+   - Complete database schema
+   - API endpoints with code
+   - Deployment architecture
+
+**Estimated Delivery:** 6-8 months for team of 3-4 developers (based on story points)
+
+### Module Organization for Large Apps
+**Structure by Business Domain:**
+```
+app_name/
+├── patient_management/
+├── appointment_scheduling/
+├── clinical_operations/
+├── laboratory/
+├── inventory/
+├── equipment/
+├── billing/
+├── staff/
+└── reporting/
+```
+
+Each module contains:
+- `doctype/` - Data models
+- `page/` - Custom pages
+- `report/` - Reports specific to module
+
+### API Documentation Best Practices
+**OpenAPI/Swagger Specification Pattern:**
+1. **Complete 4-Phase Documentation Stack:**
+   - Phase 1: Functional Requirements (business logic, FR-XXX format)
+   - Phase 2: User Stories (agile stories, epics, story points)
+   - Phase 3: Technical Design (DocTypes, schemas, implementation)
+   - Phase 4: API Specification (OpenAPI YAML, endpoints, schemas)
+
+2. **OpenAPI File Structure:**
+   - Start with metadata, servers, authentication schemes
+   - Group endpoints by logical modules (Patient, Appointment, Session, etc.)
+   - Define reusable schemas in `components/schemas`
+   - Include request/response examples for clarity
+   - Document security requirements per endpoint
+   - Add rate limiting and error response patterns
+
+3. **YAML Creation Strategy:**
+   - Initial file: metadata + first few endpoints (~500 lines)
+   - Incremental additions: 1-2 modules per update (~300-400 lines)
+   - Ensures valid YAML structure throughout
+   - Easier to validate and test incrementally
+
+4. **Authentication Patterns for Frappe:**
+   - API Key: `Authorization: token {api_key}:{api_secret}`
+   - Session-based: Cookie authentication for web clients
+   - Document both methods in security schemes
+
+5. **Endpoint Naming Convention:**
+   - List: `GET /api/resource/{doctype}`
+   - Get: `GET /api/resource/{doctype}/{name}`
+   - Create: `POST /api/resource/{doctype}`
+   - Update: `PUT /api/resource/{doctype}/{name}`
+   - Custom methods: `POST /api/method/{app}.api.{module}.{function}`
+
+**Deliverables for Complete Project Documentation:**
+- Functional Requirements: ~1000 lines
+- User Stories: ~1600 lines
+- Technical Design: ~2100 lines
+- API Specification: ~2000 lines (40+ endpoints)
+- Frontend Design: ~1500 lines
+- Development Environment Setup: ~1400 lines
+- **Total**: ~9700 lines of comprehensive documentation
+
+### Frontend Documentation Best Practices
+**5-Phase Complete Documentation Stack:**
+1. Functional Requirements → Business logic and acceptance criteria
+2. User Stories → Agile epics and story points
+3. Technical Design → Backend, database, DocTypes
+4. API Specification → OpenAPI/Swagger endpoints
+5. Frontend Design → UI/UX, components, implementation
+
+**Frontend Document Structure:**
+- **Architecture** (~200 lines): Tech stack, file structure, bundle config
+- **Design System** (~200 lines): Colors, typography, spacing, shadows
+- **Layouts & Navigation** (~200 lines): Page structure, navigation patterns
+- **Component Library** (~400 lines): Reusable Vue components with examples
+- **Forms & Validation** (~200 lines): DocType forms, validation utilities
+- **Dashboard & Analytics** (~200 lines): Real-time dashboards, charts
+- **Workflows** (~200 lines): Clinical/business process interfaces
+- **State Management** (~100 lines): Store pattern, real-time updates
+- **API Integration** (~100 lines): Helper functions organized by module
+- **Performance** (~100 lines): Caching, debouncing, optimization
+- **Accessibility** (~100 lines): WCAG compliance, keyboard nav, ARIA
+- **Testing** (~100 lines): Unit, component, E2E test examples
+- **Build & Deploy** (~100 lines): esbuild config, optimization checklist
+
+**Key Frontend Patterns:**
+- Use `bash cat >> file.md << 'EOF'` for adding large code blocks (avoids JSON escaping issues)
+- Vue 3 Composition API for all components
+- Frappe UI integration patterns (frappe.call, frappe.ui.Dialog)
+- Real-time updates via frappe.realtime.on()
+- Mobile-first responsive design with SCSS mixins
+- Component naming: PascalCase (Vue), kebab-case (CSS), camelCase (JS)
+
+**Bash Append Strategy for Large Content:**
+When adding substantial code examples or multi-section content:
+- Use `cat >> filename << 'EOF'` instead of `find_and_replace_code`
+- Avoids JSON parsing issues with special characters (backticks, quotes)
+- Better for adding 500+ line blocks with mixed HTML/JS/CSS
+- Check file end state with `tail` before appending
+
+**Last Updated**: 2026-02-19
 **Framework Version**: v15.100.1

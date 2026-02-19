@@ -1,1 +1,2 @@
 frappe
+erpnext_arabic_layout

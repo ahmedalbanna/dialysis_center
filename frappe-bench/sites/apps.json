@@ -7,5 +7,15 @@
         "required": [],
         "idx": 1,
         "version": "15.100.1"
+    },
+    "erpnext_arabic_layout": {
+        "is_repo": true,
+        "resolution": {
+            "commit_hash": "71ac028f3c021b83d294b90a758442765c18561f",
+            "branch": "master"
+        },
+        "required": [],
+        "idx": 2,
+        "version": "0.0.1"
     }
 }

@@ -1,0 +1,2006 @@
+openapi: 3.0.3
+info:
+  title: Dialysis Center Management System API
+  description: |
+    RESTful API for the Dialysis Center Management System (DCMS) built on Frappe Framework.
+    
+    ## Authentication
+    All API endpoints require authentication using Frappe's built-in authentication:
+    - API Key & Secret (recommended for integrations)
+    - Session-based authentication (for web applications)
+    
+    ## Base URL
+    Production: `https://your-domain.com/api`
+    Development: `http://localhost:8000/api`
+    
+    ## Rate Limiting
+    - 1000 requests per hour per API key
+    - 100 requests per minute per API key
+    
+    ## Response Format
+    All responses follow Frappe's standard format:
+    ```json
+    {
+      "message": {}, // Response data
+      "exc": null,   // Exception if any
+      "exc_type": null
+    }
+    ```
+    
+  version: 1.0.0
+  contact:
+    name: DCMS API Support
+    email: api-support@yourorg.com
+  license:
+    name: MIT
+    url: https://opensource.org/licenses/MIT
+
+servers:
+  - url: https://api.dcms.example.com/api
+    description: Production server
+  - url: https://staging.dcms.example.com/api
+    description: Staging server
+  - url: http://localhost:8000/api
+    description: Development server
+
+tags:
+  - name: Patient Management
+    description: Patient registration, profiles, and medical records
+  - name: Appointments
+    description: Appointment scheduling and management
+  - name: Dialysis Sessions
+    description: Treatment session management and monitoring
+  - name: Laboratory
+    description: Lab test orders and results
+  - name: Inventory
+    description: Stock and inventory management
+  - name: Billing
+    description: Billing and payment operations
+  - name: Equipment
+    description: Dialysis machine and equipment management
+  - name: Staff
+    description: Staff management and scheduling
+  - name: Reports
+    description: Analytics and reporting
+
+security:
+  - ApiKeyAuth: []
+  - SessionAuth: []
+
+paths:
+  # ==================== Patient Management ====================
+  
+  /resource/Patient:
+    get:
+      tags:
+        - Patient Management
+      summary: List all patients
+      description: Retrieve a list of patients with optional filtering
+      parameters:
+        - name: fields
+          in: query
+          description: Comma-separated list of fields to return
+          schema:
+            type: string
+            example: "name,patient_id,full_name,phone"
+        - name: filters
+          in: query
+          description: JSON filters
+          schema:
+            type: string
+            example: '[["patient_status","=","Active"]]'
+        - name: limit_start
+          in: query
+          description: Pagination offset
+          schema:
+            type: integer
+            default: 0
+        - name: limit_page_length
+          in: query
+          description: Number of records per page
+          schema:
+            type: integer
+            default: 20
+        - name: order_by
+          in: query
+          description: Sort order
+          schema:
+            type: string
+            example: "creation desc"
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/PatientSummary'
+        '401':
+          $ref: '#/components/responses/UnauthorizedError'
+        '403':
+          $ref: '#/components/responses/ForbiddenError'
+
+  /resource/Patient/{patient_id}:
+    get:
+      tags:
+        - Patient Management
+      summary: Get patient details
+      description: Retrieve detailed information about a specific patient
+      parameters:
+        - name: patient_id
+          in: path
+          required: true
+          description: Patient ID
+          schema:
+            type: string
+            example: "PT-2026-00001"
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    $ref: '#/components/schemas/Patient'
+        '404':
+          $ref: '#/components/responses/NotFoundError'
+    
+    put:
+      tags:
+        - Patient Management
+      summary: Update patient
+      description: Update patient information
+      parameters:
+        - name: patient_id
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatientUpdate'
+      responses:
+        '200':
+          description: Patient updated successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    $ref: '#/components/schemas/Patient'
+        '400':
+          $ref: '#/components/responses/BadRequestError'
+    
+    delete:
+      tags:
+        - Patient Management
+      summary: Delete patient
+      description: Delete a patient record (admin only)
+      parameters:
+        - name: patient_id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Patient deleted successfully
+        '403':
+          $ref: '#/components/responses/ForbiddenError'
+
+  /method/dcms.api.patient.register_patient:
+    post:
+      tags:
+        - Patient Management
+      summary: Register new patient
+      description: Register a new patient in the system
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatientCreate'
+      responses:
+        '200':
+          description: Patient registered successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    $ref: '#/components/schemas/Patient'
+        '400':
+          $ref: '#/components/responses/BadRequestError'
+
+  /method/dcms.api.patient.get_medical_summary:
+    get:
+      tags:
+        - Patient Management
+      summary: Get patient medical summary
+      description: Retrieve comprehensive medical summary for a patient
+      parameters:
+        - name: patient_id
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    $ref: '#/components/schemas/MedicalSummary'
+
+  /method/dcms.api.patient.search_patients:
+    get:
+      tags:
+        - Patient Management
+      summary: Search patients
+      description: Search patients by name, phone, or patient ID
+      parameters:
+        - name: query
+          in: query
+          required: true
+          description: Search query
+          schema:
+            type: string
+            example: "John"
+        - name: limit
+          in: query
+          schema:
+            type: integer
+            default: 10
+      responses:
+        '200':
+          description: Search results
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/PatientSummary'
+
+  # ==================== Appointments ====================
+  
+  /method/dcms.api.appointment.book_appointment:
+    post:
+      tags:
+        - Appointments
+      summary: Book appointment
+      description: Create a new dialysis appointment
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AppointmentCreate'
+      responses:
+        '200':
+          description: Appointment booked successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    $ref: '#/components/schemas/Appointment'
+        '400':
+          $ref: '#/components/responses/BadRequestError'
+        '409':
+          description: Appointment conflict (machine or staff unavailable)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  /method/dcms.api.appointment.check_availability:
+    get:
+      tags:
+        - Appointments
+      summary: Check availability
+      description: Check available time slots for appointments
+      parameters:
+        - name: date
+          in: query
+          required: true
+          schema:
+            type: string
+            format: date
+            example: "2026-02-20"
+        - name: machine_id
+          in: query
+          schema:
+            type: string
+        - name: shift
+          in: query
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Available slots
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/AvailableSlot'
+
+  /method/dcms.api.appointment.check_in:
+    post:
+      tags:
+        - Appointments
+      summary: Check-in patient
+      description: Mark patient as checked in for their appointment
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - appointment_id
+              properties:
+                appointment_id:
+                  type: string
+                  example: "APT-2026-00001"
+      responses:
+        '200':
+          description: Patient checked in successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    $ref: '#/components/schemas/Appointment'
+
+  /method/dcms.api.appointment.cancel_appointment:
+    post:
+      tags:
+        - Appointments
+      summary: Cancel appointment
+      description: Cancel an existing appointment
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - appointment_id
+                - cancellation_reason
+              properties:
+                appointment_id:
+                  type: string
+                cancellation_reason:
+                  type: string
+      responses:
+        '200':
+          description: Appointment cancelled successfully
+
+  /method/dcms.api.appointment.get_daily_schedule:
+    get:
+      tags:
+        - Appointments
+      summary: Get daily schedule
+      description: Retrieve all appointments for a specific date
+      parameters:
+        - name: date
+          in: query
+          required: true
+          schema:
+            type: string
+            format: date
+        - name: location
+          in: query
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Daily schedule
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Appointment'
+
+  # ==================== Dialysis Sessions ====================
+  
+  /method/dcms.api.session.start_session:
+    post:
+      tags:
+        - Dialysis Sessions
+      summary: Start dialysis session
+      description: Begin a new dialysis treatment session
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SessionStart'
+      responses:
+        '200':
+          description: Session started successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    $ref: '#/components/schemas/DialysisSession'
+
+  /method/dcms.api.session.record_vitals:
+    post:
+      tags:
+        - Dialysis Sessions
+      summary: Record vital signs
+      description: Record patient vitals during dialysis session
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - session_id
+                - vitals
+              properties:
+                session_id:
+                  type: string
+                vitals:
+                  $ref: '#/components/schemas/VitalSigns'
+      responses:
+        '200':
+          description: Vitals recorded successfully
+
+  /method/dcms.api.session.complete_session:
+    post:
+      tags:
+        - Dialysis Sessions
+      summary: Complete session
+      description: Mark dialysis session as completed
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SessionComplete'
+      responses:
+        '200':
+          description: Session completed successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    $ref: '#/components/schemas/DialysisSession'
+
+  /method/dcms.api.session.get_active_sessions:
+    get:
+      tags:
+        - Dialysis Sessions
+      summary: Get active sessions
+      description: Retrieve all currently active dialysis sessions
+      parameters:
+        - name: location
+          in: query
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Active sessions
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/DialysisSessionSummary'
+
+  /method/dcms.api.session.get_patient_history:
+    get:
+      tags:
+        - Dialysis Sessions
+      summary: Get patient session history
+      description: Retrieve complete session history for a patient
+      parameters:
+        - name: patient_id
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: from_date
+          in: query
+          schema:
+            type: string
+            format: date
+        - name: to_date
+          in: query
+          schema:
+            type: string
+            format: date
+        - name: limit
+          in: query
+          schema:
+            type: integer
+            default: 50
+      responses:
+        '200':
+          description: Session history
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/DialysisSessionSummary'
+
+  # ==================== Laboratory ====================
+  
+  /method/dcms.api.lab.create_order:
+    post:
+      tags:
+        - Laboratory
+      summary: Create lab order
+      description: Create a new laboratory test order
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LabOrderCreate'
+      responses:
+        '200':
+          description: Lab order created successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    $ref: '#/components/schemas/LabTestOrder'
+
+  /method/dcms.api.lab.submit_result:
+    post:
+      tags:
+        - Laboratory
+      summary: Submit lab result
+      description: Submit laboratory test results
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LabResultSubmit'
+      responses:
+        '200':
+          description: Lab result submitted successfully
+
+  /method/dcms.api.lab.get_results:
+    get:
+      tags:
+        - Laboratory
+      summary: Get lab results
+      description: Retrieve lab results for a patient
+      parameters:
+        - name: patient_id
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: from_date
+          in: query
+          schema:
+            type: string
+            format: date
+        - name: to_date
+          in: query
+          schema:
+            type: string
+            format: date
+      responses:
+        '200':
+          description: Lab results
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/LabTestResult'
+
+  /method/dcms.api.lab.calculate_kt_v:
+    post:
+      tags:
+        - Laboratory
+      summary: Calculate Kt/V
+      description: Calculate dialysis adequacy (Kt/V and URR)
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - session_id
+                - pre_urea
+                - post_urea
+              properties:
+                session_id:
+                  type: string
+                pre_urea:
+                  type: number
+                  description: Pre-dialysis urea (mg/dL)
+                post_urea:
+                  type: number
+                  description: Post-dialysis urea (mg/dL)
+      responses:
+        '200':
+          description: Calculation results
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: object
+                    properties:
+                      kt_v:
+                        type: number
+                        example: 1.4
+                      urr:
+                        type: number
+                        example: 70
+                      adequacy_status:
+                        type: string
+                        enum: [Adequate, Inadequate]
+
+  # ==================== Billing ====================
+  
+  /method/dcms.api.billing.generate_bill:
+    post:
+      tags:
+        - Billing
+      summary: Generate patient bill
+      description: Auto-generate bill from completed dialysis session
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - session_id
+              properties:
+                session_id:
+                  type: string
+      responses:
+        '200':
+          description: Bill generated successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    $ref: '#/components/schemas/PatientBill'
+
+  /method/dcms.api.billing.record_payment:
+    post:
+      tags:
+        - Billing
+      summary: Record payment
+      description: Record a payment received from patient
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PaymentCreate'
+      responses:
+        '200':
+          description: Payment recorded successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    $ref: '#/components/schemas/PaymentEntry'
+
+  /method/dcms.api.billing.get_outstanding_bills:
+    get:
+      tags:
+        - Billing
+      summary: Get outstanding bills
+      description: Retrieve all unpaid bills for a patient
+      parameters:
+        - name: patient_id
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Outstanding bills
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/PatientBillSummary'
+
+  /method/dcms.api.billing.create_insurance_claim:
+    post:
+      tags:
+        - Billing
+      summary: Create insurance claim
+      description: Submit an insurance claim for dialysis sessions
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/InsuranceClaimCreate'
+      responses:
+        '200':
+          description: Insurance claim created successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    $ref: '#/components/schemas/InsuranceClaim'
+
+  # ==================== Inventory ====================
+  
+  /method/dcms.api.inventory.get_stock_levels:
+    get:
+      tags:
+        - Inventory
+      summary: Get stock levels
+      description: Retrieve current stock levels for all items
+      parameters:
+        - name: category
+          in: query
+          schema:
+            type: string
+            enum: [Dialyzer, Medication, Consumable, Equipment]
+        - name: location
+          in: query
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Stock levels
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/StockLevel'
+
+  /method/dcms.api.inventory.record_stock_receipt:
+    post:
+      tags:
+        - Inventory
+      summary: Record stock receipt
+      description: Record goods received from supplier
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/StockReceiptCreate'
+      responses:
+        '200':
+          description: Stock receipt recorded successfully
+
+  /method/dcms.api.inventory.issue_stock:
+    post:
+      tags:
+        - Inventory
+      summary: Issue stock
+      description: Issue stock items for a dialysis session
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/StockIssuanceCreate'
+      responses:
+        '200':
+          description: Stock issued successfully
+
+  /method/dcms.api.inventory.get_low_stock_alerts:
+    get:
+      tags:
+        - Inventory
+      summary: Get low stock alerts
+      description: Retrieve items below reorder level
+      responses:
+        '200':
+          description: Low stock items
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/LowStockAlert'
+
+  # ==================== Equipment ====================
+  
+  /resource/Dialysis Machine:
+    get:
+      tags:
+        - Equipment
+      summary: List dialysis machines
+      description: Retrieve list of all dialysis machines
+      parameters:
+        - name: filters
+          in: query
+          schema:
+            type: string
+            example: '[["status","=","Operational"]]'
+      responses:
+        '200':
+          description: Machine list
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/DialysisMachine'
+
+  /method/dcms.api.equipment.schedule_maintenance:
+    post:
+      tags:
+        - Equipment
+      summary: Schedule maintenance
+      description: Schedule preventive maintenance for a machine
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MaintenanceSchedule'
+      responses:
+        '200':
+          description: Maintenance scheduled successfully
+
+  /method/dcms.api.equipment.record_maintenance:
+    post:
+      tags:
+        - Equipment
+      summary: Record maintenance
+      description: Record completed maintenance activity
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MaintenanceRecord'
+      responses:
+        '200':
+          description: Maintenance recorded successfully
+
+  /method/dcms.api.equipment.get_machine_utilization:
+    get:
+      tags:
+        - Equipment
+      summary: Get machine utilization
+      description: Retrieve utilization statistics for machines
+      parameters:
+        - name: from_date
+          in: query
+          required: true
+          schema:
+            type: string
+            format: date
+        - name: to_date
+          in: query
+          required: true
+          schema:
+            type: string
+            format: date
+        - name: machine_id
+          in: query
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Utilization statistics
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/MachineUtilization'
+
+  # ==================== Reports ====================
+  
+  /method/dcms.api.reports.get_daily_census:
+    get:
+      tags:
+        - Reports
+      summary: Get daily census report
+      description: Retrieve daily patient census and session count
+      parameters:
+        - name: date
+          in: query
+          required: true
+          schema:
+            type: string
+            format: date
+        - name: location
+          in: query
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Daily census report
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    $ref: '#/components/schemas/DailyCensus'
+
+  /method/dcms.api.reports.get_monthly_clinical_quality:
+    get:
+      tags:
+        - Reports
+      summary: Get monthly clinical quality report
+      description: Clinical quality metrics for the month
+      parameters:
+        - name: month
+          in: query
+          required: true
+          schema:
+            type: string
+            example: "2026-02"
+        - name: location
+          in: query
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Clinical quality report
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    $ref: '#/components/schemas/ClinicalQualityReport'
+
+  /method/dcms.api.reports.get_financial_summary:
+    get:
+      tags:
+        - Reports
+      summary: Get financial summary
+      description: Financial summary report
+      parameters:
+        - name: from_date
+          in: query
+          required: true
+          schema:
+            type: string
+            format: date
+        - name: to_date
+          in: query
+          required: true
+          schema:
+            type: string
+            format: date
+      responses:
+        '200':
+          description: Financial summary
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    $ref: '#/components/schemas/FinancialSummary'
+
+# ==================== Components ====================
+
+components:
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: Authorization
+      description: 'Format: "token {api_key}:{api_secret}"'
+    
+    SessionAuth:
+      type: apiKey
+      in: cookie
+      name: sid
+      description: Session-based authentication cookie
+
+  schemas:
+    # Patient Schemas
+    Patient:
+      type: object
+      properties:
+        name:
+          type: string
+          example: "PT-2026-00001"
+        patient_id:
+          type: string
+          example: "PT-2026-00001"
+        first_name:
+          type: string
+          example: "John"
+        middle_name:
+          type: string
+          example: "Michael"
+        last_name:
+          type: string
+          example: "Doe"
+        full_name:
+          type: string
+          example: "John Michael Doe"
+        date_of_birth:
+          type: string
+          format: date
+          example: "1975-03-15"
+        age:
+          type: integer
+          example: 51
+        gender:
+          type: string
+          enum: [Male, Female, Other]
+        blood_group:
+          type: string
+          enum: [A+, A-, B+, B-, AB+, AB-, O+, O-]
+        national_id:
+          type: string
+          example: "123456789"
+        phone:
+          type: string
+          example: "+1234567890"
+        email:
+          type: string
+          format: email
+        insurance_provider:
+          type: string
+        insurance_id:
+          type: string
+        ckd_stage:
+          type: string
+          enum: [Stage 1, Stage 2, Stage 3, Stage 4, Stage 5]
+        patient_status:
+          type: string
+          enum: [Active, Inactive, Deceased, Transferred]
+        vip_patient:
+          type: boolean
+        registration_date:
+          type: string
+          format: date
+        emergency_contact_name:
+          type: string
+        emergency_contact_phone:
+          type: string
+    
+    PatientSummary:
+      type: object
+      properties:
+        name:
+          type: string
+        patient_id:
+          type: string
+        full_name:
+          type: string
+        phone:
+          type: string
+        patient_status:
+          type: string
+    
+    PatientCreate:
+      type: object
+      required:
+        - first_name
+        - last_name
+        - date_of_birth
+        - gender
+        - phone
+        - emergency_contact_name
+        - emergency_contact_phone
+      properties:
+        first_name:
+          type: string
+        middle_name:
+          type: string
+        last_name:
+          type: string
+        date_of_birth:
+          type: string
+          format: date
+        gender:
+          type: string
+          enum: [Male, Female, Other]
+        blood_group:
+          type: string
+        national_id:
+          type: string
+        phone:
+          type: string
+        email:
+          type: string
+        emergency_contact_name:
+          type: string
+        emergency_contact_phone:
+          type: string
+        insurance_provider:
+          type: string
+        insurance_id:
+          type: string
+    
+    PatientUpdate:
+      type: object
+      properties:
+        phone:
+          type: string
+        email:
+          type: string
+        address_line_1:
+          type: string
+        city:
+          type: string
+        patient_status:
+          type: string
+    
+    MedicalSummary:
+      type: object
+      properties:
+        patient_info:
+          $ref: '#/components/schemas/PatientSummary'
+        chronic_conditions:
+          type: array
+          items:
+            type: string
+        allergies:
+          type: array
+          items:
+            type: string
+        current_medications:
+          type: array
+          items:
+            type: object
+            properties:
+              medication_name:
+                type: string
+              dosage:
+                type: string
+        last_session:
+          type: object
+          properties:
+            date:
+              type: string
+              format: date
+            kt_v:
+              type: number
+        recent_labs:
+          type: array
+          items:
+            type: object
+    
+    # Appointment Schemas
+    Appointment:
+      type: object
+      properties:
+        name:
+          type: string
+          example: "APT-2026-00001"
+        patient:
+          type: string
+        patient_name:
+          type: string
+        appointment_date:
+          type: string
+          format: date
+        appointment_time:
+          type: string
+          format: time
+        duration:
+          type: string
+          example: "04:00:00"
+        dialysis_machine:
+          type: string
+        assigned_nurse:
+          type: string
+        shift:
+          type: string
+        status:
+          type: string
+          enum: [Scheduled, Checked In, In Progress, Completed, Cancelled, No Show]
+        special_instructions:
+          type: string
+    
+    AppointmentCreate:
+      type: object
+      required:
+        - patient
+        - appointment_date
+        - appointment_time
+        - dialysis_machine
+        - assigned_nurse
+        - shift
+      properties:
+        patient:
+          type: string
+        appointment_date:
+          type: string
+          format: date
+        appointment_time:
+          type: string
+          format: time
+        duration:
+          type: string
+          default: "04:00:00"
+        dialysis_machine:
+          type: string
+        assigned_nurse:
+          type: string
+        shift:
+          type: string
+        special_instructions:
+          type: string
+    
+    AvailableSlot:
+      type: object
+      properties:
+        time:
+          type: string
+          format: time
+        machine_id:
+          type: string
+        machine_name:
+          type: string
+        available:
+          type: boolean
+    
+    # Session Schemas
+    DialysisSession:
+      type: object
+      properties:
+        name:
+          type: string
+          example: "DS-2026-00001"
+        patient:
+          type: string
+        patient_name:
+          type: string
+        session_date:
+          type: string
+          format: date
+        dialysis_machine:
+          type: string
+        assigned_nurse:
+          type: string
+        session_status:
+          type: string
+          enum: [Draft, In Progress, Completed, Cancelled]
+        pre_dialysis_weight:
+          type: number
+        post_dialysis_weight:
+          type: number
+        uf_goal:
+          type: number
+        actual_uf_removed:
+          type: number
+        kt_v:
+          type: number
+        urr:
+          type: number
+        session_start_time:
+          type: string
+          format: date-time
+        session_end_time:
+          type: string
+          format: date-time
+    
+    DialysisSessionSummary:
+      type: object
+      properties:
+        name:
+          type: string
+        patient_name:
+          type: string
+        session_date:
+          type: string
+          format: date
+        session_status:
+          type: string
+        kt_v:
+          type: number
+    
+    SessionStart:
+      type: object
+      required:
+        - patient
+        - session_date
+        - dialysis_machine
+        - assigned_nurse
+        - pre_dialysis_weight
+        - pre_dialysis_bp_systolic
+        - pre_dialysis_bp_diastolic
+        - pre_dialysis_hr
+      properties:
+        appointment:
+          type: string
+        patient:
+          type: string
+        session_date:
+          type: string
+          format: date
+        dialysis_machine:
+          type: string
+        assigned_nurse:
+          type: string
+        pre_dialysis_weight:
+          type: number
+        pre_dialysis_bp_systolic:
+          type: integer
+        pre_dialysis_bp_diastolic:
+          type: integer
+        pre_dialysis_hr:
+          type: integer
+        pre_dialysis_temp:
+          type: number
+        access_site_type:
+          type: string
+          enum: [AV Fistula, AV Graft, Catheter]
+        access_site_condition:
+          type: string
+          enum: [Good, Fair, Poor]
+        uf_goal:
+          type: number
+        blood_flow_rate:
+          type: integer
+        dialysate_flow_rate:
+          type: integer
+    
+    SessionComplete:
+      type: object
+      required:
+        - session_id
+        - post_dialysis_weight
+        - post_dialysis_bp_systolic
+        - post_dialysis_bp_diastolic
+        - actual_uf_removed
+      properties:
+        session_id:
+          type: string
+        post_dialysis_weight:
+          type: number
+        post_dialysis_bp_systolic:
+          type: integer
+        post_dialysis_bp_diastolic:
+          type: integer
+        post_dialysis_hr:
+          type: integer
+        post_dialysis_temp:
+          type: number
+        actual_uf_removed:
+          type: number
+        patient_condition_at_discharge:
+          type: string
+          enum: [Stable, Fair, Poor]
+        complications:
+          type: string
+    
+    VitalSigns:
+      type: object
+      required:
+        - bp_systolic
+        - bp_diastolic
+        - heart_rate
+        - blood_flow_rate
+        - uf_removed_so_far
+      properties:
+        recording_time:
+          type: string
+          format: date-time
+        bp_systolic:
+          type: integer
+        bp_diastolic:
+          type: integer
+        heart_rate:
+          type: integer
+        temperature:
+          type: number
+        blood_flow_rate:
+          type: integer
+        dialysate_flow_rate:
+          type: integer
+        uf_removed_so_far:
+          type: number
+        notes:
+          type: string
+    
+    # Lab Schemas
+    LabTestOrder:
+      type: object
+      properties:
+        name:
+          type: string
+          example: "LTO-2026-00001"
+        patient:
+          type: string
+        order_date:
+          type: string
+          format: date
+        ordered_by:
+          type: string
+        priority:
+          type: string
+          enum: [Routine, Urgent, STAT]
+        status:
+          type: string
+          enum: [Ordered, Sample Collected, Sent to Lab, Completed]
+    
+    LabOrderCreate:
+      type: object
+      required:
+        - patient
+        - test_items
+      properties:
+        patient:
+          type: string
+        priority:
+          type: string
+          enum: [Routine, Urgent, STAT]
+          default: Routine
+        clinical_notes:
+          type: string
+        test_items:
+          type: array
+          items:
+            type: object
+            properties:
+              test_template:
+                type: string
+              test_name:
+                type: string
+    
+    LabTestResult:
+      type: object
+      properties:
+        name:
+          type: string
+        patient:
+          type: string
+        test_name:
+          type: string
+        result_date:
+          type: string
+          format: date-time
+        parameters:
+          type: array
+          items:
+            type: object
+            properties:
+              parameter_name:
+                type: string
+              result_value:
+                type: string
+              unit:
+                type: string
+              reference_range:
+                type: string
+              is_abnormal:
+                type: boolean
+        critical_flag:
+          type: boolean
+    
+    LabResultSubmit:
+      type: object
+      required:
+        - lab_order_id
+        - test_template
+        - parameters
+      properties:
+        lab_order_id:
+          type: string
+        test_template:
+          type: string
+        parameters:
+          type: array
+          items:
+            type: object
+            properties:
+              parameter_name:
+                type: string
+              result_value:
+                type: string
+              unit:
+                type: string
+    
+    # Billing Schemas
+    PatientBill:
+      type: object
+      properties:
+        name:
+          type: string
+          example: "BILL-2026-00001"
+        patient:
+          type: string
+        patient_name:
+          type: string
+        bill_date:
+          type: string
+          format: date
+        due_date:
+          type: string
+          format: date
+        subtotal:
+          type: number
+        discount_amount:
+          type: number
+        tax_amount:
+          type: number
+        total_amount:
+          type: number
+        amount_paid:
+          type: number
+        outstanding_amount:
+          type: number
+        bill_status:
+          type: string
+          enum: [Draft, Submitted, Partially Paid, Paid, Cancelled]
+    
+    PatientBillSummary:
+      type: object
+      properties:
+        name:
+          type: string
+        bill_date:
+          type: string
+          format: date
+        total_amount:
+          type: number
+        outstanding_amount:
+          type: number
+        bill_status:
+          type: string
+    
+    PaymentEntry:
+      type: object
+      properties:
+        name:
+          type: string
+          example: "PAY-2026-00001"
+        patient:
+          type: string
+        payment_date:
+          type: string
+          format: date
+        amount:
+          type: number
+        payment_mode:
+          type: string
+          enum: [Cash, Card, Bank Transfer, Mobile Payment]
+        reference_number:
+          type: string
+    
+    PaymentCreate:
+      type: object
+      required:
+        - patient
+        - amount
+        - payment_mode
+        - bills_paid
+      properties:
+        patient:
+          type: string
+        payment_date:
+          type: string
+          format: date
+        amount:
+          type: number
+        payment_mode:
+          type: string
+          enum: [Cash, Card, Bank Transfer, Mobile Payment]
+        reference_number:
+          type: string
+        bills_paid:
+          type: array
+          items:
+            type: object
+            properties:
+              patient_bill:
+                type: string
+              amount_paid:
+                type: number
+    
+    InsuranceClaim:
+      type: object
+      properties:
+        name:
+          type: string
+          example: "CLM-2026-00001"
+        patient:
+          type: string
+        insurance_company:
+          type: string
+        claim_date:
+          type: string
+          format: date
+        total_claim_amount:
+          type: number
+        approved_amount:
+          type: number
+        claim_status:
+          type: string
+          enum: [Draft, Submitted, Under Review, Approved, Rejected, Paid]
+    
+    InsuranceClaimCreate:
+      type: object
+      required:
+        - patient
+        - insurance_company
+        - sessions
+      properties:
+        patient:
+          type: string
+        insurance_company:
+          type: string
+        sessions:
+          type: array
+          items:
+            type: string
+    
+    # Inventory Schemas
+    StockLevel:
+      type: object
+      properties:
+        item_code:
+          type: string
+        item_name:
+          type: string
+        current_quantity:
+          type: number
+        reorder_level:
+          type: number
+        unit_of_measure:
+          type: string
+        expiring_soon:
+          type: boolean
+    
+    StockReceiptCreate:
+      type: object
+      required:
+        - supplier
+        - items
+      properties:
+        receipt_date:
+          type: string
+          format: date
+        supplier:
+          type: string
+        items:
+          type: array
+          items:
+            type: object
+            properties:
+              item:
+                type: string
+              quantity:
+                type: number
+              batch_no:
+                type: string
+              expiry_date:
+                type: string
+                format: date
+              unit_rate:
+                type: number
+    
+    StockIssuanceCreate:
+      type: object
+      required:
+        - patient
+        - items
+      properties:
+        dialysis_session:
+          type: string
+        patient:
+          type: string
+        items:
+          type: array
+          items:
+            type: object
+            properties:
+              item:
+                type: string
+              quantity:
+                type: number
+              batch_no:
+                type: string
+    
+    LowStockAlert:
+      type: object
+      properties:
+        item_code:
+          type: string
+        item_name:
+          type: string
+        current_quantity:
+          type: number
+        reorder_level:
+          type: number
+        shortage:
+          type: number
+    
+    # Equipment Schemas
+    DialysisMachine:
+      type: object
+      properties:
+        name:
+          type: string
+        machine_id:
+          type: string
+        serial_number:
+          type: string
+        manufacturer:
+          type: string
+        model:
+          type: string
+        status:
+          type: string
+          enum: [Operational, Maintenance, Out of Service]
+        location:
+          type: string
+        station_number:
+          type: string
+        total_hours_used:
+          type: number
+        total_sessions:
+          type: integer
+    
+    MaintenanceSchedule:
+      type: object
+      required:
+        - dialysis_machine
+        - maintenance_type
+        - scheduled_date
+      properties:
+        dialysis_machine:
+          type: string
+        maintenance_type:
+          type: string
+          enum: [Daily, Weekly, Monthly, Annual, Corrective]
+        scheduled_date:
+          type: string
+          format: date
+        assigned_technician:
+          type: string
+    
+    MaintenanceRecord:
+      type: object
+      required:
+        - dialysis_machine
+        - maintenance_type
+        - actual_date
+      properties:
+        dialysis_machine:
+          type: string
+        maintenance_type:
+          type: string
+        actual_date:
+          type: string
+          format: date
+        findings:
+          type: string
+        parts_replaced:
+          type: array
+          items:
+            type: object
+            properties:
+              part_name:
+                type: string
+              quantity:
+                type: integer
+    
+    MachineUtilization:
+      type: object
+      properties:
+        machine_id:
+          type: string
+        machine_name:
+          type: string
+        total_hours:
+          type: number
+        total_sessions:
+          type: integer
+        utilization_percentage:
+          type: number
+        downtime_hours:
+          type: number
+    
+    # Report Schemas
+    DailyCensus:
+      type: object
+      properties:
+        date:
+          type: string
+          format: date
+        total_patients_scheduled:
+          type: integer
+        total_sessions_completed:
+          type: integer
+        no_shows:
+          type: integer
+        cancellations:
+          type: integer
+        walk_ins:
+          type: integer
+        average_session_duration:
+          type: string
+    
+    ClinicalQualityReport:
+      type: object
+      properties:
+        month:
+          type: string
+        total_sessions:
+          type: integer
+        kt_v_achievement:
+          type: object
+          properties:
+            target_percentage:
+              type: number
+            actual_percentage:
+              type: number
+        anemia_management:
+          type: object
+          properties:
+            target_hb_range:
+              type: string
+            percentage_in_range:
+              type: number
+        vascular_access_stats:
+          type: object
+          properties:
+            fistula_percentage:
+              type: number
+            graft_percentage:
+              type: number
+            catheter_percentage:
+              type: number
+        complication_rate:
+          type: number
+    
+    FinancialSummary:
+      type: object
+      properties:
+        period:
+          type: object
+          properties:
+            from_date:
+              type: string
+              format: date
+            to_date:
+              type: string
+              format: date
+        total_revenue:
+          type: number
+        total_collections:
+          type: number
+        outstanding_receivables:
+          type: number
+        revenue_by_category:
+          type: object
+          properties:
+            dialysis_sessions:
+              type: number
+            consultations:
+              type: number
+            medications:
+              type: number
+            lab_tests:
+              type: number
+    
+    # Error Schemas
+    Error:
+      type: object
+      properties:
+        message:
+          type: string
+        exc_type:
+          type: string
+        exception:
+          type: string
+
+  responses:
+    UnauthorizedError:
+      description: Authentication required
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+          example:
+            message: "Authentication required"
+            exc_type: "AuthenticationError"
+    
+    ForbiddenError:
+      description: Insufficient permissions
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+          example:
+            message: "Insufficient permissions"
+            exc_type: "PermissionError"
+    
+    NotFoundError:
+      description: Resource not found
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+          example:
+            message: "Resource not found"
+            exc_type: "DoesNotExistError"
+    
+    BadRequestError:
+      description: Invalid request
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+          example:
+            message: "Validation error"
+            exc_type: "ValidationError"
