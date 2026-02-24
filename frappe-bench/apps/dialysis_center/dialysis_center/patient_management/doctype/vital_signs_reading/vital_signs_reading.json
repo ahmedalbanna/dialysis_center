@@ -1,0 +1,173 @@
+{
+ "actions": [],
+ "creation": "2026-02-19 04:30:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "reading_time",
+  "column_break_1",
+  "recorded_by",
+  "section_break_vital",
+  "bp_systolic",
+  "bp_diastolic",
+  "column_break_2",
+  "heart_rate",
+  "temperature",
+  "column_break_3",
+  "respiratory_rate",
+  "oxygen_saturation",
+  "section_break_dialysis",
+  "blood_flow_rate",
+  "dialysate_flow_rate",
+  "column_break_4",
+  "venous_pressure",
+  "transmembrane_pressure",
+  "column_break_5",
+  "uf_removed",
+  "uf_rate",
+  "section_break_status",
+  "status_indicator",
+  "alert_notes"
+ ],
+ "fields": [
+  {
+   "fieldname": "reading_time",
+   "fieldtype": "Datetime",
+   "in_list_view": 1,
+   "label": "Time",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "recorded_by",
+   "fieldtype": "Link",
+   "label": "Recorded By",
+   "options": "Staff"
+  },
+  {
+   "fieldname": "section_break_vital",
+   "fieldtype": "Section Break",
+   "label": "Vital Signs"
+  },
+  {
+   "fieldname": "bp_systolic",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "BP Systolic (mmHg)"
+  },
+  {
+   "fieldname": "bp_diastolic",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "BP Diastolic (mmHg)"
+  },
+  {
+   "fieldname": "column_break_2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "heart_rate",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Heart Rate (bpm)"
+  },
+  {
+   "fieldname": "temperature",
+   "fieldtype": "Float",
+   "label": "Temperature (°C)",
+   "precision": "1"
+  },
+  {
+   "fieldname": "column_break_3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "respiratory_rate",
+   "fieldtype": "Int",
+   "label": "Respiratory Rate"
+  },
+  {
+   "fieldname": "oxygen_saturation",
+   "fieldtype": "Int",
+   "label": "O2 Saturation (%)"
+  },
+  {
+   "fieldname": "section_break_dialysis",
+   "fieldtype": "Section Break",
+   "label": "Dialysis Parameters"
+  },
+  {
+   "fieldname": "blood_flow_rate",
+   "fieldtype": "Int",
+   "label": "Blood Flow Rate (ml/min)"
+  },
+  {
+   "fieldname": "dialysate_flow_rate",
+   "fieldtype": "Int",
+   "label": "Dialysate Flow Rate (ml/min)"
+  },
+  {
+   "fieldname": "column_break_4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "venous_pressure",
+   "fieldtype": "Int",
+   "label": "Venous Pressure (mmHg)"
+  },
+  {
+   "fieldname": "transmembrane_pressure",
+   "fieldtype": "Int",
+   "label": "TMP (mmHg)"
+  },
+  {
+   "fieldname": "column_break_5",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "uf_removed",
+   "fieldtype": "Float",
+   "label": "UF Removed (L)",
+   "precision": "2"
+  },
+  {
+   "fieldname": "uf_rate",
+   "fieldtype": "Float",
+   "label": "UF Rate (ml/hr)",
+   "precision": "1"
+  },
+  {
+   "fieldname": "section_break_status",
+   "fieldtype": "Section Break",
+   "label": "Status"
+  },
+  {
+   "default": "Normal",
+   "fieldname": "status_indicator",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Normal\nWarning\nCritical"
+  },
+  {
+   "fieldname": "alert_notes",
+   "fieldtype": "Small Text",
+   "label": "Alert/Notes"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2026-02-19 04:30:00.000000",
+ "modified_by": "Administrator",
+ "module": "Patient Management",
+ "name": "Vital Signs Reading",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

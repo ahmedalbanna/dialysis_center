@@ -1,0 +1,8 @@
+{
+    "db_host": "localhost",
+    "db_name": "_b2165c2f32b36e51",
+    "db_password": "I4AuTAt1FS2TIsge",
+    "db_port": 3306,
+    "db_type": "mariadb",
+    "developer_mode": 1
+}

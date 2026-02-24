@@ -1,0 +1,491 @@
+/* ===================================
+   Dialysis Center Management System
+   Main Stylesheet
+   =================================== */
+
+/* Color Palette */
+:root {
+	--primary-color: #2490ef;
+	--secondary-color: #5e64ff;
+	--success-color: #28a745;
+	--warning-color: #ffc107;
+	--danger-color: #dc3545;
+	--info-color: #17a2b8;
+	--light-gray: #f8f9fa;
+	--dark-gray: #343a40;
+	--border-color: #dee2e6;
+	
+	/* Status Colors */
+	--status-scheduled: #2490ef;
+	--status-in-progress: #ff6f00;
+	--status-completed: #28a745;
+	--status-cancelled: #dc3545;
+	--status-active: #28a745;
+	--status-inactive: #6c757d;
+	
+	/* Vital Sign Alert Colors */
+	--vital-normal: #28a745;
+	--vital-warning: #ffc107;
+	--vital-critical: #dc3545;
+	
+	/* Spacing */
+	--spacing-xs: 5px;
+	--spacing-sm: 10px;
+	--spacing-md: 15px;
+	--spacing-lg: 20px;
+	--spacing-xl: 30px;
+	
+	/* Border Radius */
+	--border-radius-sm: 3px;
+	--border-radius-md: 5px;
+	--border-radius-lg: 8px;
+	
+	/* Shadows */
+	--shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+	--shadow-md: 0 4px 8px rgba(0, 0, 0, 0.15);
+	--shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Dashboard Cards */
+.patient-dashboard,
+.session-dashboard,
+.billing-dashboard {
+	margin-bottom: var(--spacing-lg);
+}
+
+.dashboard-card {
+	background: white;
+	border: 1px solid var(--border-color);
+	border-radius: var(--border-radius-md);
+	padding: var(--spacing-md);
+	box-shadow: var(--shadow-sm);
+	transition: all 0.3s ease;
+	height: 100%;
+}
+
+.dashboard-card:hover {
+	box-shadow: var(--shadow-md);
+	transform: translateY(-2px);
+}
+
+.dashboard-card .card-header {
+	font-size: 12px;
+	color: #6c757d;
+	text-transform: uppercase;
+	font-weight: 600;
+	margin-bottom: var(--spacing-sm);
+	letter-spacing: 0.5px;
+}
+
+.dashboard-card .card-value {
+	font-size: 28px;
+	font-weight: bold;
+	color: var(--dark-gray);
+	line-height: 1;
+}
+
+.dashboard-card .card-value.status-active {
+	color: var(--status-active);
+}
+
+.dashboard-card .card-value.status-inactive {
+	color: var(--status-inactive);
+}
+
+/* Session Progress */
+.session-progress {
+	background: white;
+	border: 1px solid var(--border-color);
+	border-radius: var(--border-radius-md);
+	padding: var(--spacing-md);
+	margin: var(--spacing-md) 0;
+}
+
+.session-progress .progress {
+	height: 25px;
+	border-radius: var(--border-radius-md);
+	overflow: hidden;
+}
+
+.session-progress .progress-bar {
+	font-size: 14px;
+	font-weight: 600;
+	line-height: 25px;
+}
+
+/* Timeline for Sessions */
+.sessions-timeline {
+	margin-top: var(--spacing-lg);
+	position: relative;
+}
+
+.sessions-timeline::before {
+	content: '';
+	position: absolute;
+	left: 8px;
+	top: 0;
+	bottom: 0;
+	width: 2px;
+	background: var(--border-color);
+}
+
+.timeline-item {
+	position: relative;
+	padding-left: 35px;
+	margin-bottom: var(--spacing-md);
+}
+
+.timeline-badge {
+	position: absolute;
+	left: 0;
+	width: 18px;
+	height: 18px;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: white;
+	border: 2px solid var(--border-color);
+	z-index: 1;
+}
+
+.timeline-badge.badge-success {
+	border-color: var(--success-color);
+	background: var(--success-color);
+	color: white;
+}
+
+.timeline-badge.badge-warning {
+	border-color: var(--warning-color);
+	background: var(--warning-color);
+	color: white;
+}
+
+.timeline-badge i {
+	font-size: 8px;
+}
+
+.timeline-content {
+	background: white;
+	border: 1px solid var(--border-color);
+	border-radius: var(--border-radius-md);
+	padding: var(--spacing-sm);
+}
+
+/* Appointment Info */
+.appointment-info {
+	background: var(--light-gray);
+	border-left: 4px solid var(--primary-color);
+	padding: var(--spacing-md);
+	border-radius: var(--border-radius-md);
+	margin: var(--spacing-md) 0;
+}
+
+.appointment-info strong {
+	color: var(--dark-gray);
+}
+
+/* Payment Summary */
+.payment-summary {
+	background: var(--light-gray);
+	border-radius: var(--border-radius-md);
+	padding: var(--spacing-lg);
+	margin: var(--spacing-md) 0;
+	border: 1px solid var(--border-color);
+}
+
+.payment-summary h4 {
+	margin: 0;
+	font-weight: bold;
+}
+
+.payment-summary h6 {
+	margin-bottom: var(--spacing-xs);
+	color: #6c757d;
+	font-size: 12px;
+	text-transform: uppercase;
+	font-weight: 600;
+}
+
+/* Vital Signs Indicators */
+.vital-indicator {
+	display: inline-block;
+	padding: 2px 8px;
+	border-radius: var(--border-radius-sm);
+	font-size: 11px;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 0.5px;
+}
+
+.vital-indicator.normal {
+	background: rgba(40, 167, 69, 0.1);
+	color: var(--vital-normal);
+	border: 1px solid var(--vital-normal);
+}
+
+.vital-indicator.warning {
+	background: rgba(255, 193, 7, 0.1);
+	color: var(--vital-warning);
+	border: 1px solid var(--vital-warning);
+}
+
+.vital-indicator.critical {
+	background: rgba(220, 53, 69, 0.1);
+	color: var(--vital-critical);
+	border: 1px solid var(--vital-critical);
+}
+
+/* Status Badges */
+.status-badge {
+	display: inline-block;
+	padding: 4px 12px;
+	border-radius: 20px;
+	font-size: 12px;
+	font-weight: 600;
+	text-transform: capitalize;
+}
+
+.status-badge.scheduled {
+	background: rgba(36, 144, 239, 0.1);
+	color: var(--status-scheduled);
+}
+
+.status-badge.in-progress {
+	background: rgba(255, 111, 0, 0.1);
+	color: var(--status-in-progress);
+}
+
+.status-badge.completed {
+	background: rgba(40, 167, 69, 0.1);
+	color: var(--status-completed);
+}
+
+.status-badge.cancelled {
+	background: rgba(220, 53, 69, 0.1);
+	color: var(--status-cancelled);
+}
+
+/* Alert Cards */
+.alert-card {
+	background: white;
+	border-left: 4px solid;
+	border-radius: var(--border-radius-md);
+	padding: var(--spacing-md);
+	margin-bottom: var(--spacing-md);
+	box-shadow: var(--shadow-sm);
+}
+
+.alert-card.info {
+	border-left-color: var(--info-color);
+}
+
+.alert-card.warning {
+	border-left-color: var(--warning-color);
+	background: #fff3cd;
+}
+
+.alert-card.danger {
+	border-left-color: var(--danger-color);
+	background: #f8d7da;
+}
+
+.alert-card.success {
+	border-left-color: var(--success-color);
+	background: #d4edda;
+}
+
+/* Form Enhancements */
+.form-section-heading {
+	font-size: 16px;
+	font-weight: 600;
+	color: var(--dark-gray);
+	margin-top: var(--spacing-lg);
+	margin-bottom: var(--spacing-md);
+	padding-bottom: var(--spacing-sm);
+	border-bottom: 2px solid var(--border-color);
+}
+
+/* Grid View Enhancements */
+.grid-row {
+	border-left: 3px solid transparent;
+	transition: all 0.2s ease;
+}
+
+.grid-row:hover {
+	background: var(--light-gray);
+	border-left-color: var(--primary-color);
+}
+
+.grid-row.status-critical {
+	border-left-color: var(--danger-color);
+	background: rgba(220, 53, 69, 0.05);
+}
+
+.grid-row.status-warning {
+	border-left-color: var(--warning-color);
+	background: rgba(255, 193, 7, 0.05);
+}
+
+/* Quick Stats */
+.quick-stats {
+	display: flex;
+	gap: var(--spacing-md);
+	margin: var(--spacing-md) 0;
+	flex-wrap: wrap;
+}
+
+.stat-item {
+	flex: 1;
+	min-width: 150px;
+	background: white;
+	border: 1px solid var(--border-color);
+	border-radius: var(--border-radius-md);
+	padding: var(--spacing-md);
+	text-align: center;
+}
+
+.stat-item .stat-value {
+	font-size: 32px;
+	font-weight: bold;
+	color: var(--primary-color);
+}
+
+.stat-item .stat-label {
+	font-size: 12px;
+	color: #6c757d;
+	text-transform: uppercase;
+	margin-top: var(--spacing-xs);
+}
+
+/* Print Styles */
+@media print {
+	.patient-dashboard,
+	.dashboard-card,
+	.payment-summary {
+		break-inside: avoid;
+	}
+	
+	.timeline-item {
+		page-break-inside: avoid;
+	}
+	
+	body {
+		font-size: 12pt;
+	}
+	
+	.dashboard-card {
+		box-shadow: none;
+		border: 1px solid #000;
+	}
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+	.dashboard-card .card-value {
+		font-size: 22px;
+	}
+	
+	.payment-summary {
+		padding: var(--spacing-md);
+	}
+	
+	.stat-item {
+		min-width: 100%;
+	}
+	
+	.quick-stats {
+		flex-direction: column;
+	}
+}
+
+/* Loading Spinner */
+.dialysis-loader {
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	border: 3px solid var(--border-color);
+	border-top-color: var(--primary-color);
+	border-radius: 50%;
+	animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+	to { transform: rotate(360deg); }
+}
+
+/* Custom Buttons */
+.btn-dialysis-primary {
+	background-color: var(--primary-color);
+	border-color: var(--primary-color);
+	color: white;
+}
+
+.btn-dialysis-primary:hover {
+	background-color: #1c7cd5;
+	border-color: #1c7cd5;
+}
+
+/* Chart Container */
+.vital-chart-container {
+	background: white;
+	border: 1px solid var(--border-color);
+	border-radius: var(--border-radius-md);
+	padding: var(--spacing-lg);
+	margin: var(--spacing-md) 0;
+}
+
+.vital-chart-container h5 {
+	margin-bottom: var(--spacing-md);
+	color: var(--dark-gray);
+}
+
+/* Event Log */
+.event-log {
+	max-height: 400px;
+	overflow-y: auto;
+	border: 1px solid var(--border-color);
+	border-radius: var(--border-radius-md);
+	padding: var(--spacing-sm);
+}
+
+.event-log-item {
+	padding: var(--spacing-sm);
+	border-bottom: 1px solid var(--border-color);
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+}
+
+.event-log-item:last-child {
+	border-bottom: none;
+}
+
+.event-log-item.severity-critical {
+	background: rgba(220, 53, 69, 0.05);
+	border-left: 3px solid var(--danger-color);
+}
+
+.event-log-item.severity-high {
+	background: rgba(255, 193, 7, 0.05);
+	border-left: 3px solid var(--warning-color);
+}
+
+/* Scrollbar Styling */
+.event-log::-webkit-scrollbar {
+	width: 8px;
+}
+
+.event-log::-webkit-scrollbar-track {
+	background: var(--light-gray);
+	border-radius: var(--border-radius-sm);
+}
+
+.event-log::-webkit-scrollbar-thumb {
+	background: var(--border-color);
+	border-radius: var(--border-radius-sm);
+}
+
+.event-log::-webkit-scrollbar-thumb:hover {
+	background: #adb5bd;
+}

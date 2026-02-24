@@ -1,0 +1,62 @@
+[
+	{
+		"doctype": "Treatment Template",
+		"name": "Standard Hemodialysis",
+		"template_name": "Standard Hemodialysis",
+		"dialysis_modality": "Hemodialysis",
+		"treatment_duration": 240,
+		"blood_flow_rate": 300,
+		"dialysate_flow_rate": 500,
+		"dialyzer_type": "F60",
+		"is_active": 1,
+		"description": "Standard 4-hour hemodialysis treatment"
+	},
+	{
+		"doctype": "Treatment Template",
+		"name": "Short Hemodialysis",
+		"template_name": "Short Hemodialysis",
+		"dialysis_modality": "Hemodialysis",
+		"treatment_duration": 180,
+		"blood_flow_rate": 350,
+		"dialysate_flow_rate": 600,
+		"dialyzer_type": "F80",
+		"is_active": 1,
+		"description": "Short 3-hour high-efficiency dialysis"
+	},
+	{
+		"doctype": "Treatment Template",
+		"name": "Hemodiafiltration",
+		"template_name": "Hemodiafiltration",
+		"dialysis_modality": "Hemodiafiltration",
+		"treatment_duration": 240,
+		"blood_flow_rate": 350,
+		"dialysate_flow_rate": 500,
+		"dialyzer_type": "FX80",
+		"is_active": 1,
+		"description": "High-flux hemodiafiltration treatment"
+	},
+	{
+		"doctype": "Treatment Template",
+		"name": "Low Blood Flow Protocol",
+		"template_name": "Low Blood Flow Protocol",
+		"dialysis_modality": "Hemodialysis",
+		"treatment_duration": 240,
+		"blood_flow_rate": 280,
+		"dialysate_flow_rate": 500,
+		"dialyzer_type": "F60",
+		"is_active": 1,
+		"description": "For patients at risk of hypotension"
+	},
+	{
+		"doctype": "Treatment Template",
+		"name": "High Efficiency Protocol",
+		"template_name": "High Efficiency Protocol",
+		"dialysis_modality": "Hemodialysis",
+		"treatment_duration": 240,
+		"blood_flow_rate": 400,
+		"dialysate_flow_rate": 600,
+		"dialyzer_type": "F80",
+		"is_active": 1,
+		"description": "High-efficiency treatment for enhanced dialysis adequacy"
+	}
+]

@@ -1,0 +1,110 @@
+{
+ "actions": [],
+ "autoname": "field:price_list_name",
+ "creation": "2026-02-19 04:50:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "price_list_name",
+  "is_default",
+  "column_break_1",
+  "customer_tier",
+  "valid_from",
+  "valid_to",
+  "section_break_items",
+  "items"
+ ],
+ "fields": [
+  {
+   "fieldname": "price_list_name",
+   "fieldtype": "Data",
+   "label": "Price List Name",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "is_default",
+   "fieldtype": "Check",
+   "label": "Is Default"
+  },
+  {
+   "fieldname": "column_break_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "customer_tier",
+   "fieldtype": "Select",
+   "label": "Customer Tier",
+   "options": "Standard\nVIP\nInsurance\nCorporate\nGovernment",
+   "reqd": 1
+  },
+  {
+   "fieldname": "valid_from",
+   "fieldtype": "Date",
+   "label": "Valid From"
+  },
+  {
+   "fieldname": "valid_to",
+   "fieldtype": "Date",
+   "label": "Valid To"
+  },
+  {
+   "fieldname": "section_break_items",
+   "fieldtype": "Section Break",
+   "label": "Price Items"
+  },
+  {
+   "fieldname": "items",
+   "fieldtype": "Table",
+   "label": "Items",
+   "options": "Price List Item",
+   "reqd": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-02-19 04:50:00.000000",
+ "modified_by": "Administrator",
+ "module": "Billing Management",
+ "name": "Price List",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Dialysis Administrator",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Dialysis Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Dialysis Billing Clerk",
+   "share": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

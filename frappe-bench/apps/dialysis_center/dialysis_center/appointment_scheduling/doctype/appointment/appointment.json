@@ -1,0 +1,198 @@
+{
+ "actions": [],
+ "allow_rename": 0,
+ "autoname": "format:APT-{YYYY}-{#####}",
+ "creation": "2026-02-19 00:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "patient",
+  "patient_name",
+  "appointment_date",
+  "appointment_time",
+  "duration",
+  "column_break_1",
+  "machine",
+  "shift",
+  "assigned_nurse",
+  "assigned_doctor",
+  "section_break_2",
+  "appointment_type",
+  "status",
+  "priority",
+  "section_break_3",
+  "notes",
+  "cancellation_reason",
+  "checked_in_time",
+  "completed_time"
+ ],
+ "fields": [
+  {
+   "fieldname": "patient",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Patient",
+   "options": "Patient",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "patient.patient_name",
+   "fieldname": "patient_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Patient Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "appointment_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Appointment Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "appointment_time",
+   "fieldtype": "Time",
+   "in_list_view": 1,
+   "label": "Appointment Time",
+   "reqd": 1
+  },
+  {
+   "default": "240",
+   "fieldname": "duration",
+   "fieldtype": "Int",
+   "label": "Duration (minutes)"
+  },
+  {
+   "fieldname": "column_break_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "machine",
+   "fieldtype": "Link",
+   "label": "Dialysis Machine",
+   "options": "Dialysis Machine"
+  },
+  {
+   "fieldname": "shift",
+   "fieldtype": "Select",
+   "label": "Shift",
+   "options": "\nMorning\nAfternoon\nEvening"
+  },
+  {
+   "fieldname": "assigned_nurse",
+   "fieldtype": "Link",
+   "label": "Assigned Nurse",
+   "options": "User"
+  },
+  {
+   "fieldname": "assigned_doctor",
+   "fieldtype": "Link",
+   "label": "Assigned Doctor",
+   "options": "User"
+  },
+  {
+   "fieldname": "section_break_2",
+   "fieldtype": "Section Break",
+   "label": "Appointment Details"
+  },
+  {
+   "default": "Regular",
+   "fieldname": "appointment_type",
+   "fieldtype": "Select",
+   "label": "Appointment Type",
+   "options": "Regular\nEmergency\nFirst Visit\nFollow-up"
+  },
+  {
+   "default": "Scheduled",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Status",
+   "options": "Scheduled\nConfirmed\nChecked In\nIn Progress\nCompleted\nCancelled\nNo Show",
+   "reqd": 1
+  },
+  {
+   "default": "Normal",
+   "fieldname": "priority",
+   "fieldtype": "Select",
+   "label": "Priority",
+   "options": "Low\nNormal\nHigh\nUrgent"
+  },
+  {
+   "fieldname": "section_break_3",
+   "fieldtype": "Section Break",
+   "label": "Additional Information"
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Text",
+   "label": "Notes"
+  },
+  {
+   "depends_on": "eval:doc.status=='Cancelled'",
+   "fieldname": "cancellation_reason",
+   "fieldtype": "Small Text",
+   "label": "Cancellation Reason"
+  },
+  {
+   "fieldname": "checked_in_time",
+   "fieldtype": "Datetime",
+   "label": "Checked In Time",
+   "read_only": 1
+  },
+  {
+   "fieldname": "completed_time",
+   "fieldtype": "Datetime",
+   "label": "Completed Time",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-02-19 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Appointment Scheduling",
+ "name": "Appointment",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Dialysis Administrator",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Dialysis Receptionist",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Dialysis Nurse",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

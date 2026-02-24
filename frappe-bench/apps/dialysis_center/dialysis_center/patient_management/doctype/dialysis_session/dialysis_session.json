@@ -1,0 +1,232 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2026-02-19 03:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "patient",
+  "patient_name",
+  "column_break_2",
+  "session_date",
+  "session_time",
+  "section_break_5",
+  "dialysis_machine",
+  "dialysis_modality",
+  "treatment_duration",
+  "column_break_8",
+  "blood_flow_rate",
+  "dialysate_flow_rate",
+  "ultrafiltration_goal",
+  "section_break_vital",
+  "vital_signs",
+  "section_break_notes",
+  "pre_dialysis_weight",
+  "post_dialysis_weight",
+  "weight_loss",
+  "column_break_notes",
+  "complications",
+  "notes",
+  "section_break_status",
+  "status",
+  "started_at",
+  "column_break_status",
+  "completed_at",
+  "actual_duration"
+ ],
+ "fields": [
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "options": "DS-.YYYY.-"
+  },
+  {
+   "fieldname": "patient",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Patient",
+   "options": "Patient",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "patient.patient_name",
+   "fieldname": "patient_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Patient Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "session_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Session Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "session_time",
+   "fieldtype": "Time",
+   "label": "Session Time",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_5",
+   "fieldtype": "Section Break",
+   "label": "Treatment Details"
+  },
+  {
+   "fieldname": "dialysis_machine",
+   "fieldtype": "Link",
+   "label": "Dialysis Machine",
+   "options": "Dialysis Machine"
+  },
+  {
+   "fieldname": "dialysis_modality",
+   "fieldtype": "Select",
+   "label": "Dialysis Modality",
+   "options": "\nHemodialysis\nHemodiafiltration\nHemofiltration"
+  },
+  {
+   "fieldname": "treatment_duration",
+   "fieldtype": "Int",
+   "label": "Treatment Duration (minutes)"
+  },
+  {
+   "fieldname": "column_break_8",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "blood_flow_rate",
+   "fieldtype": "Int",
+   "label": "Blood Flow Rate (mL/min)"
+  },
+  {
+   "fieldname": "dialysate_flow_rate",
+   "fieldtype": "Int",
+   "label": "Dialysate Flow Rate (mL/min)"
+  },
+  {
+   "fieldname": "ultrafiltration_goal",
+   "fieldtype": "Float",
+   "label": "Ultrafiltration Goal (L)",
+   "precision": "2"
+  },
+  {
+   "fieldname": "section_break_vital",
+   "fieldtype": "Section Break",
+   "label": "Vital Signs"
+  },
+  {
+   "fieldname": "vital_signs",
+   "fieldtype": "Table",
+   "label": "Vital Signs Log",
+   "options": "Vital Signs Log"
+  },
+  {
+   "fieldname": "section_break_notes",
+   "fieldtype": "Section Break",
+   "label": "Weight & Notes"
+  },
+  {
+   "fieldname": "pre_dialysis_weight",
+   "fieldtype": "Float",
+   "label": "Pre-Dialysis Weight (kg)",
+   "precision": "2"
+  },
+  {
+   "fieldname": "post_dialysis_weight",
+   "fieldtype": "Float",
+   "label": "Post-Dialysis Weight (kg)",
+   "precision": "2"
+  },
+  {
+   "fieldname": "weight_loss",
+   "fieldtype": "Float",
+   "label": "Weight Loss (kg)",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_notes",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "complications",
+   "fieldtype": "Small Text",
+   "label": "Complications"
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Text",
+   "label": "Session Notes"
+  },
+  {
+   "fieldname": "section_break_status",
+   "fieldtype": "Section Break",
+   "label": "Status & Timing"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Status",
+   "options": "Scheduled\nIn Progress\nCompleted\nCancelled",
+   "reqd": 1
+  },
+  {
+   "fieldname": "started_at",
+   "fieldtype": "Datetime",
+   "label": "Started At"
+  },
+  {
+   "fieldname": "column_break_status",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "completed_at",
+   "fieldtype": "Datetime",
+   "label": "Completed At"
+  },
+  {
+   "fieldname": "actual_duration",
+   "fieldtype": "Int",
+   "label": "Actual Duration (minutes)",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2026-02-19 03:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Patient Management",
+ "name": "Dialysis Session",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

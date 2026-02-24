@@ -1,0 +1,83 @@
+/**
+ * Dialysis Center - Main Styles
+ * Entry point for all SCSS styles
+ */
+
+// Import all style modules
+@import 'components';
+@import 'dashboard';
+@import 'responsive';
+
+// Global overrides for Frappe
+.frappe-control {
+	margin-bottom: 15px;
+}
+
+.section-head {
+	margin-top: 20px;
+	margin-bottom: 10px;
+}
+
+// Custom form enhancements
+.form-dashboard {
+	margin-bottom: 20px;
+}
+
+// Improved form layout
+.form-layout {
+	.form-column {
+		padding-right: 15px;
+		
+		@media (max-width: 768px) {
+			padding-right: 0;
+		}
+	}
+}
+
+// Custom button groups
+.custom-btn-group {
+	display: flex;
+	gap: 8px;
+	flex-wrap: wrap;
+	
+	.btn {
+		margin: 0;
+	}
+}
+
+// Enhanced indicators
+.indicator {
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+	
+	&::before {
+		content: '';
+		width: 8px;
+		height: 8px;
+		border-radius: 50%;
+		display: inline-block;
+	}
+	
+	&.green::before { background: #10b981; }
+	&.blue::before { background: #3b82f6; }
+	&.orange::before { background: #f59e0b; }
+	&.red::before { background: #ef4444; }
+	&.purple::before { background: #8b5cf6; }
+	&.gray::before { background: #9ca3af; }
+}
+
+// Print styles
+@media print {
+	.dashboard-actions,
+	.custom-btn-group,
+	.session-footer {
+		display: none !important;
+	}
+	
+	.session-card,
+	.stat-card {
+		break-inside: avoid;
+		page-break-inside: avoid;
+	}
+}

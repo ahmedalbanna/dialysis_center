@@ -1,0 +1,16 @@
+setup.py
+dialysis_center/__init__.py
+dialysis_center/hooks.py
+dialysis_center.egg-info/PKG-INFO
+dialysis_center.egg-info/SOURCES.txt
+dialysis_center.egg-info/dependency_links.txt
+dialysis_center.egg-info/not-zip-safe
+dialysis_center.egg-info/requires.txt
+dialysis_center.egg-info/top_level.txt
+dialysis_center/api/__init__.py
+dialysis_center/appointment_scheduling/__init__.py
+dialysis_center/config/__init__.py
+dialysis_center/equipment_management/__init__.py
+dialysis_center/patient_management/__init__.py
+dialysis_center/templates/__init__.py
+dialysis_center/tests/__init__.py

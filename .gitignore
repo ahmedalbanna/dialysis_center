@@ -6,3 +6,6 @@ frappe-bench/sites/assets
 frappe-bench/logs
 frappe-bench/sites/frappe.local/logs
 frappe-bench/env
+*.pyc
+Frappe-Docs
+mariadb-data

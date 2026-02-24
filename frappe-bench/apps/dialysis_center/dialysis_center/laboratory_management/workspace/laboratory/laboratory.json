@@ -1,0 +1,103 @@
+{
+ "charts": [
+  {
+   "chart_name": "Common Tests",
+   "label": "Most Common Tests"
+  },
+  {
+   "chart_name": "Test Turnaround",
+   "label": "Test Completion Trend"
+  },
+  {
+   "chart_name": "Test Status",
+   "label": "Lab Test Status Distribution"
+  }
+ ],
+ "content": "[{\"id\":\"l7RJqFH2yj\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Laboratory Management</span>\",\"col\":12}},{\"id\":\"aBDqFfezBf\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Most Common Tests\",\"col\":12}},{\"id\":\"Ov6A-sytuW\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Test Completion Trend\",\"col\":12}},{\"id\":\"ebRLWPQql7\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Lab Test Status Distribution\",\"col\":12}},{\"id\":\"HwHLVg-Dls\",\"type\":\"card\",\"data\":{\"card_name\":\"Tests\",\"col\":6}},{\"id\":\"7-oGcYMT8W\",\"type\":\"card\",\"data\":{\"card_name\":\"Results\",\"col\":6}}]",
+ "creation": "2026-02-20 00:10:40",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "project",
+ "idx": 7,
+ "indicator_color": "",
+ "is_hidden": 0,
+ "label": "Laboratory",
+ "links": [
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Tests",
+   "link_count": 0,
+   "link_to": "",
+   "link_type": "Page",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Lab Test",
+   "link_count": 0,
+   "link_to": "Lab Test",
+   "link_type": "DocType",
+   "onboard": 1,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Lab Test Parameter",
+   "link_count": 0,
+   "link_to": "Lab Test Parameter",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Results",
+   "link_count": 0,
+   "link_to": "",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Lab Result",
+   "link_count": 0,
+   "link_to": "Lab Result",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Lab Results Trending",
+   "link_count": 0,
+   "link_to": "Lab Results Trending",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  }
+ ],
+ "modified": "2026-02-21 23:20:39.549465",
+ "modified_by": "Administrator",
+ "module": "Laboratory Management",
+ "name": "Laboratory",
+ "number_cards": [],
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [],
+ "sequence_id": 7.0,
+ "shortcuts": [],
+ "title": "Laboratory"
+}

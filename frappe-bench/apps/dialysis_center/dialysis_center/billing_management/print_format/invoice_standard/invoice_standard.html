@@ -1,0 +1,155 @@
+<div class="invoice-print-format" style="font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto;">
+	<!-- Header -->
+	<div class="invoice-header" style="border-bottom: 3px solid #2c5282; padding-bottom: 20px; margin-bottom: 30px;">
+		<table style="width: 100%;">
+			<tr>
+				<td style="width: 60%;">
+					<h1 style="color: #2c5282; margin: 0; font-size: 32px;">INVOICE</h1>
+					<p style="margin: 5px 0; color: #666;">Dialysis Center Management System</p>
+				</td>
+				<td style="width: 40%; text-align: right; vertical-align: top;">
+					<div style="background: #f7fafc; padding: 10px; border-radius: 5px;">
+						<strong style="font-size: 14px;">Invoice No:</strong><br>
+						<span style="font-size: 18px; color: #2c5282;">{{ doc.name }}</span><br>
+						<small style="color: #666;">Date: {{ doc.get_formatted('invoice_date') }}</small>
+					</div>
+				</td>
+			</tr>
+		</table>
+	</div>
+
+	<!-- Bill To / From Section -->
+	<div class="billing-info" style="margin-bottom: 30px;">
+		<table style="width: 100%;">
+			<tr>
+				<td style="width: 50%; vertical-align: top;">
+					<div style="background: #f7fafc; padding: 15px; border-radius: 5px; margin-right: 10px;">
+						<h3 style="margin: 0 0 10px 0; color: #2c5282; font-size: 16px;">Bill To:</h3>
+						<strong style="font-size: 14px;">{{ doc.patient_name }}</strong><br>
+						<span style="color: #666; font-size: 13px;">Patient ID: {{ doc.patient }}</span><br>
+						{% if doc.get('mobile_number') %}
+						<span style="color: #666; font-size: 13px;">Phone: {{ doc.mobile_number }}</span><br>
+						{% endif %}
+					</div>
+				</td>
+				<td style="width: 50%; vertical-align: top;">
+					<div style="background: #f7fafc; padding: 15px; border-radius: 5px; margin-left: 10px;">
+						<h3 style="margin: 0 0 10px 0; color: #2c5282; font-size: 16px;">Payment Details:</h3>
+						<table style="width: 100%; font-size: 13px;">
+							<tr>
+								<td style="color: #666; padding: 3px 0;">Due Date:</td>
+								<td style="text-align: right;"><strong>{{ doc.get_formatted('due_date') }}</strong></td>
+							</tr>
+							<tr>
+								<td style="color: #666; padding: 3px 0;">Payment Status:</td>
+								<td style="text-align: right;">
+									<span style="padding: 3px 8px; border-radius: 3px; font-size: 11px; font-weight: bold; 
+										{% if doc.payment_status == 'Paid' %}background: #c6f6d5; color: #22543d;
+										{% elif doc.payment_status == 'Partially Paid' %}background: #fed7aa; color: #7c2d12;
+										{% else %}background: #fed7d7; color: #742a2a;{% endif %}">
+										{{ doc.payment_status }}
+									</span>
+								</td>
+							</tr>
+						</table>
+					</div>
+				</td>
+			</tr>
+		</table>
+	</div>
+
+	<!-- Line Items -->
+	<div class="line-items" style="margin-bottom: 30px;">
+		<table style="width: 100%; border-collapse: collapse;">
+			<thead>
+				<tr style="background: #2c5282; color: white;">
+					<th style="padding: 12px; text-align: left; border: 1px solid #2c5282;">#</th>
+					<th style="padding: 12px; text-align: left; border: 1px solid #2c5282;">Description</th>
+					<th style="padding: 12px; text-align: center; border: 1px solid #2c5282; width: 80px;">Qty</th>
+					<th style="padding: 12px; text-align: right; border: 1px solid #2c5282; width: 120px;">Rate</th>
+					<th style="padding: 12px; text-align: right; border: 1px solid #2c5282; width: 120px;">Amount</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for item in doc.items %}
+				<tr style="{% if loop.index % 2 == 0 %}background: #f7fafc;{% endif %}">
+					<td style="padding: 10px; border: 1px solid #e2e8f0;">{{ loop.index }}</td>
+					<td style="padding: 10px; border: 1px solid #e2e8f0;">
+						<strong>{{ item.item_description }}</strong><br>
+						<small style="color: #666;">{{ item.item_type }}</small>
+					</td>
+					<td style="padding: 10px; border: 1px solid #e2e8f0; text-align: center;">{{ item.quantity }}</td>
+					<td style="padding: 10px; border: 1px solid #e2e8f0; text-align: right;">{{ frappe.utils.fmt_money(item.rate, currency=doc.currency) }}</td>
+					<td style="padding: 10px; border: 1px solid #e2e8f0; text-align: right;"><strong>{{ frappe.utils.fmt_money(item.amount, currency=doc.currency) }}</strong></td>
+				</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+	</div>
+
+	<!-- Totals -->
+	<div class="totals" style="margin-bottom: 30px;">
+		<table style="width: 100%;">
+			<tr>
+				<td style="width: 60%;"></td>
+				<td style="width: 40%;">
+					<table style="width: 100%; font-size: 14px;">
+						<tr>
+							<td style="padding: 8px; color: #666;">Subtotal:</td>
+							<td style="padding: 8px; text-align: right;">{{ frappe.utils.fmt_money(doc.subtotal, currency=doc.currency) }}</td>
+						</tr>
+						{% if doc.discount_amount %}
+						<tr>
+							<td style="padding: 8px; color: #666;">Discount ({{ doc.discount_percentage }}%):</td>
+							<td style="padding: 8px; text-align: right; color: #e53e3e;">- {{ frappe.utils.fmt_money(doc.discount_amount, currency=doc.currency) }}</td>
+						</tr>
+						{% endif %}
+						{% if doc.tax_amount %}
+						<tr>
+							<td style="padding: 8px; color: #666;">Tax ({{ doc.tax_percentage }}%):</td>
+							<td style="padding: 8px; text-align: right;">{{ frappe.utils.fmt_money(doc.tax_amount, currency=doc.currency) }}</td>
+						</tr>
+						{% endif %}
+						<tr style="border-top: 2px solid #2c5282;">
+							<td style="padding: 12px; font-size: 16px;"><strong>Total Amount:</strong></td>
+							<td style="padding: 12px; text-align: right; font-size: 18px; color: #2c5282;"><strong>{{ frappe.utils.fmt_money(doc.total_amount, currency=doc.currency) }}</strong></td>
+						</tr>
+						{% if doc.amount_paid %}
+						<tr>
+							<td style="padding: 8px; color: #666;">Amount Paid:</td>
+							<td style="padding: 8px; text-align: right; color: #38a169;">{{ frappe.utils.fmt_money(doc.amount_paid, currency=doc.currency) }}</td>
+						</tr>
+						<tr style="border-top: 1px solid #e2e8f0;">
+							<td style="padding: 8px;"><strong>Outstanding:</strong></td>
+							<td style="padding: 8px; text-align: right; color: #e53e3e;"><strong>{{ frappe.utils.fmt_money(doc.outstanding_amount, currency=doc.currency) }}</strong></td>
+						</tr>
+						{% endif %}
+					</table>
+				</td>
+			</tr>
+		</table>
+	</div>
+
+	<!-- Notes -->
+	{% if doc.notes %}
+	<div class="notes" style="margin-bottom: 20px; padding: 15px; background: #fffbeb; border-left: 4px solid #f59e0b; border-radius: 3px;">
+		<strong style="color: #92400e;">Notes:</strong><br>
+		<span style="color: #78350f; font-size: 13px;">{{ doc.notes }}</span>
+	</div>
+	{% endif %}
+
+	<!-- Footer -->
+	<div class="footer" style="margin-top: 40px; padding-top: 20px; border-top: 1px solid #e2e8f0; text-align: center; color: #666; font-size: 12px;">
+		<p style="margin: 5px 0;">Thank you for choosing our dialysis center!</p>
+		<p style="margin: 5px 0;">For inquiries, please contact our billing department.</p>
+		<p style="margin: 15px 0 5px 0; color: #999; font-size: 11px;">This is a computer-generated invoice.</p>
+	</div>
+</div>
+
+<style>
+	@media print {
+		.invoice-print-format {
+			max-width: 100%;
+		}
+	}
+</style>

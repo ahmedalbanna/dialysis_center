@@ -1,0 +1,87 @@
+{
+ "actions": [],
+ "creation": "2026-02-19 04:30:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "event_time",
+  "event_type",
+  "column_break_1",
+  "severity",
+  "handled_by",
+  "section_break_1",
+  "description",
+  "action_taken",
+  "notes"
+ ],
+ "fields": [
+  {
+   "fieldname": "event_time",
+   "fieldtype": "Datetime",
+   "in_list_view": 1,
+   "label": "Event Time",
+   "reqd": 1
+  },
+  {
+   "fieldname": "event_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Event Type",
+   "options": "Vital Sign Alert\nMachine Alarm\nHypotension\nHypertension\nCramping\nNausea/Vomiting\nChest Pain\nAccess Issue\nEquipment Malfunction\nMedication Given\nFluid Adjustment\nOther",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Low",
+   "fieldname": "severity",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Severity",
+   "options": "Low\nMedium\nHigh\nCritical"
+  },
+  {
+   "fieldname": "handled_by",
+   "fieldtype": "Link",
+   "label": "Handled By",
+   "options": "Staff"
+  },
+  {
+   "fieldname": "section_break_1",
+   "fieldtype": "Section Break",
+   "label": "Details"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Small Text",
+   "in_list_view": 1,
+   "label": "Description",
+   "reqd": 1
+  },
+  {
+   "fieldname": "action_taken",
+   "fieldtype": "Small Text",
+   "label": "Action Taken"
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Text",
+   "label": "Additional Notes"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2026-02-19 04:30:00.000000",
+ "modified_by": "Administrator",
+ "module": "Patient Management",
+ "name": "Session Event",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

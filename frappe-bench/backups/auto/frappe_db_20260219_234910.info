@@ -1,0 +1,8 @@
+Backup Information
+==================
+Date: Thu Feb 19 23:49:10 UTC 2026
+Database: _b2165c2f32b36e51
+Backup File: ./backups/auto/frappe_db_20260219_234910.sql.gz
+Backup Size: 228K
+Container: frappe-mariadb
+Host: cs-01khvkggc65n6cj1eghm6vxxf4

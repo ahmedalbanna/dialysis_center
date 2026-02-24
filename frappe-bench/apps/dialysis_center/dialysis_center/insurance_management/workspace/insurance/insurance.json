@@ -1,0 +1,103 @@
+{
+ "charts": [
+  {
+   "chart_name": "Claim Status",
+   "label": "Claim Status"
+  },
+  {
+   "chart_name": "Claim Amount Trend",
+   "label": "Claim Amount Trend"
+  },
+  {
+   "chart_name": "Claims by Provider",
+   "label": "Claims by Provider"
+  }
+ ],
+ "content": "[{\"id\":\"ORAgqGsVFF\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Insurance Management</span>\",\"col\":12}},{\"id\":\"t0qIR5QRjn\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Claim Status\",\"col\":12}},{\"id\":\"xYC-vnbL75\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Claim Amount Trend\",\"col\":12}},{\"id\":\"eJUdeoqJ4n\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Claims by Provider\",\"col\":12}},{\"id\":\"FXInKJU_I7\",\"type\":\"card\",\"data\":{\"card_name\":\"Providers\",\"col\":4}},{\"id\":\"l68wlI6x3p\",\"type\":\"card\",\"data\":{\"card_name\":\"Claims\",\"col\":4}},{\"id\":\"ceXTFQRZeH\",\"type\":\"card\",\"data\":{\"card_name\":\"Prescriptions\",\"col\":4}}]",
+ "creation": "2026-02-20 00:10:40",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "quality-3",
+ "idx": 9,
+ "indicator_color": "",
+ "is_hidden": 0,
+ "label": "Insurance",
+ "links": [
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Providers",
+   "link_count": 0,
+   "link_to": "",
+   "link_type": "Page",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Insurance Provider",
+   "link_count": 0,
+   "link_to": "Insurance Provider",
+   "link_type": "DocType",
+   "onboard": 1,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Claims",
+   "link_count": 0,
+   "link_to": "",
+   "link_type": "Page",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Insurance Claim",
+   "link_count": 0,
+   "link_to": "Insurance Claim",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Prescriptions",
+   "link_count": 0,
+   "link_to": "",
+   "link_type": "Page",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Prescription",
+   "link_count": 0,
+   "link_to": "Prescription",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  }
+ ],
+ "modified": "2026-02-21 23:24:33.555706",
+ "modified_by": "Administrator",
+ "module": "Insurance Management",
+ "name": "Insurance",
+ "number_cards": [],
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [],
+ "sequence_id": 9.0,
+ "shortcuts": [],
+ "title": "Insurance"
+}

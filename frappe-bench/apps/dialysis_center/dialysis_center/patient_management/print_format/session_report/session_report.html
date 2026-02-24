@@ -1,0 +1,246 @@
+<div class="session-report-print" style="font-family: Arial, sans-serif; max-width: 900px; margin: 0 auto;">
+	<!-- Header -->
+	<div class="report-header" style="border-bottom: 3px solid #2c5282; padding-bottom: 20px; margin-bottom: 25px;">
+		<table style="width: 100%;">
+			<tr>
+				<td style="width: 70%;">
+					<h1 style="color: #2c5282; margin: 0; font-size: 28px;">DIALYSIS SESSION REPORT</h1>
+					<p style="margin: 5px 0; color: #666; font-size: 14px;">Clinical Documentation</p>
+				</td>
+				<td style="width: 30%; text-align: right; vertical-align: top;">
+					<div style="background: #f7fafc; padding: 10px; border-radius: 5px;">
+						<strong style="font-size: 12px; color: #666;">Session ID:</strong><br>
+						<span style="font-size: 16px; color: #2c5282; font-weight: bold;">{{ doc.name }}</span><br>
+						<small style="color: #666;">{{ doc.get_formatted('session_date') }}</small>
+					</div>
+				</td>
+			</tr>
+		</table>
+	</div>
+
+	<!-- Patient Information -->
+	<div class="patient-info" style="background: #ebf8ff; padding: 15px; border-radius: 8px; margin-bottom: 25px; border-left: 4px solid #3182ce;">
+		<h3 style="margin: 0 0 10px 0; color: #2c5282; font-size: 16px;">Patient Information</h3>
+		<table style="width: 100%; font-size: 13px;">
+			<tr>
+				<td style="width: 25%; padding: 5px 0;"><strong>Patient:</strong></td>
+				<td style="width: 25%; padding: 5px 0;">{{ doc.patient_name }} ({{ doc.patient }})</td>
+				<td style="width: 25%; padding: 5px 0;"><strong>Age/Gender:</strong></td>
+				<td style="width: 25%; padding: 5px 0;">
+					{% if doc.get('age') %}{{ doc.age }} years{% endif %}
+					{% if doc.get('gender') %}/ {{ doc.gender }}{% endif %}
+				</td>
+			</tr>
+			<tr>
+				<td style="padding: 5px 0;"><strong>Dialysis Type:</strong></td>
+				<td style="padding: 5px 0;">{{ doc.dialysis_type or 'Hemodialysis' }}</td>
+				<td style="padding: 5px 0;"><strong>Access Type:</strong></td>
+				<td style="padding: 5px 0;">{{ doc.access_type or 'N/A' }}</td>
+			</tr>
+		</table>
+	</div>
+
+	<!-- Session Details -->
+	<div class="session-details" style="margin-bottom: 25px;">
+		<h3 style="color: #2c5282; font-size: 16px; border-bottom: 2px solid #e2e8f0; padding-bottom: 8px; margin-bottom: 15px;">Session Details</h3>
+		<table style="width: 100%; border-collapse: collapse; font-size: 13px;">
+			<tr style="background: #f7fafc;">
+				<td style="padding: 10px; width: 25%; font-weight: bold; border: 1px solid #e2e8f0;">Session Date:</td>
+				<td style="padding: 10px; width: 25%; border: 1px solid #e2e8f0;">{{ doc.get_formatted('session_date') }}</td>
+				<td style="padding: 10px; width: 25%; font-weight: bold; border: 1px solid #e2e8f0;">Machine:</td>
+				<td style="padding: 10px; width: 25%; border: 1px solid #e2e8f0;">{{ doc.dialysis_machine }}</td>
+			</tr>
+			<tr>
+				<td style="padding: 10px; font-weight: bold; border: 1px solid #e2e8f0;">Start Time:</td>
+				<td style="padding: 10px; border: 1px solid #e2e8f0;">{{ doc.get_formatted('session_start_time') }}</td>
+				<td style="padding: 10px; font-weight: bold; border: 1px solid #e2e8f0;">End Time:</td>
+				<td style="padding: 10px; border: 1px solid #e2e8f0;">{{ doc.get_formatted('session_end_time') or 'In Progress' }}</td>
+			</tr>
+			<tr style="background: #f7fafc;">
+				<td style="padding: 10px; font-weight: bold; border: 1px solid #e2e8f0;">Duration:</td>
+				<td style="padding: 10px; border: 1px solid #e2e8f0;">{{ doc.treatment_duration or 'N/A' }} minutes</td>
+				<td style="padding: 10px; font-weight: bold; border: 1px solid #e2e8f0;">Status:</td>
+				<td style="padding: 10px; border: 1px solid #e2e8f0;">
+					<span style="padding: 3px 8px; border-radius: 3px; font-size: 11px; font-weight: bold;
+						{% if doc.status == 'Completed' %}background: #c6f6d5; color: #22543d;
+						{% elif doc.status == 'In Progress' %}background: #bee3f8; color: #2c5282;
+						{% else %}background: #fed7d7; color: #742a2a;{% endif %}">
+						{{ doc.status }}
+					</span>
+				</td>
+			</tr>
+			<tr>
+				<td style="padding: 10px; font-weight: bold; border: 1px solid #e2e8f0;">Assigned Nurse:</td>
+				<td colspan="3" style="padding: 10px; border: 1px solid #e2e8f0;">{{ doc.assigned_nurse or 'N/A' }}</td>
+			</tr>
+		</table>
+	</div>
+
+	<!-- Treatment Parameters -->
+	<div class="treatment-params" style="margin-bottom: 25px;">
+		<h3 style="color: #2c5282; font-size: 16px; border-bottom: 2px solid #e2e8f0; padding-bottom: 8px; margin-bottom: 15px;">Treatment Parameters</h3>
+		<table style="width: 100%; border-collapse: collapse; font-size: 13px;">
+			<tr style="background: #f7fafc;">
+				<td style="padding: 10px; width: 33%; font-weight: bold; border: 1px solid #e2e8f0;">Blood Flow Rate:</td>
+				<td style="padding: 10px; width: 33%; font-weight: bold; border: 1px solid #e2e8f0;">Dialysate Flow Rate:</td>
+				<td style="padding: 10px; width: 34%; font-weight: bold; border: 1px solid #e2e8f0;">UF Goal:</td>
+			</tr>
+			<tr>
+				<td style="padding: 10px; border: 1px solid #e2e8f0;">{{ doc.blood_flow_rate or 'N/A' }} mL/min</td>
+				<td style="padding: 10px; border: 1px solid #e2e8f0;">{{ doc.dialysate_flow_rate or 'N/A' }} mL/min</td>
+				<td style="padding: 10px; border: 1px solid #e2e8f0;">{{ doc.uf_goal or 'N/A' }} L</td>
+			</tr>
+			<tr style="background: #f7fafc;">
+				<td style="padding: 10px; font-weight: bold; border: 1px solid #e2e8f0;">Dialyzer:</td>
+				<td style="padding: 10px; font-weight: bold; border: 1px solid #e2e8f0;">Anticoagulation:</td>
+				<td style="padding: 10px; font-weight: bold; border: 1px solid #e2e8f0;">Heparin Dose:</td>
+			</tr>
+			<tr>
+				<td style="padding: 10px; border: 1px solid #e2e8f0;">{{ doc.dialyzer_type or 'N/A' }}</td>
+				<td style="padding: 10px; border: 1px solid #e2e8f0;">{{ doc.anticoagulation or 'N/A' }}</td>
+				<td style="padding: 10px; border: 1px solid #e2e8f0;">
+					{% if doc.heparin_dose %}{{ doc.heparin_dose }} units{% else %}N/A{% endif %}
+				</td>
+			</tr>
+		</table>
+	</div>
+
+	<!-- Vital Signs -->
+	<div class="vital-signs" style="margin-bottom: 25px;">
+		<h3 style="color: #2c5282; font-size: 16px; border-bottom: 2px solid #e2e8f0; padding-bottom: 8px; margin-bottom: 15px;">Vital Signs Assessment</h3>
+		
+		<table style="width: 100%; margin-bottom: 15px; font-size: 13px;">
+			<tr style="background: #2c5282; color: white;">
+				<th style="padding: 10px; border: 1px solid #2c5282; text-align: left; width: 30%;"></th>
+				<th style="padding: 10px; border: 1px solid #2c5282; text-align: center;">Pre-Dialysis</th>
+				<th style="padding: 10px; border: 1px solid #2c5282; text-align: center;">Post-Dialysis</th>
+				<th style="padding: 10px; border: 1px solid #2c5282; text-align: center;">Change</th>
+			</tr>
+			<tr style="background: #f7fafc;">
+				<td style="padding: 10px; border: 1px solid #e2e8f0; font-weight: bold;">Weight (kg)</td>
+				<td style="padding: 10px; border: 1px solid #e2e8f0; text-align: center;">{{ doc.pre_dialysis_weight or 'N/A' }}</td>
+				<td style="padding: 10px; border: 1px solid #e2e8f0; text-align: center;">{{ doc.post_dialysis_weight or 'N/A' }}</td>
+				<td style="padding: 10px; border: 1px solid #e2e8f0; text-align: center; {% if doc.weight_loss %}color: #38a169; font-weight: bold;{% endif %}">
+					{% if doc.weight_loss %}{{ doc.weight_loss }} kg{% else %}N/A{% endif %}
+				</td>
+			</tr>
+			<tr>
+				<td style="padding: 10px; border: 1px solid #e2e8f0; font-weight: bold;">Blood Pressure (mmHg)</td>
+				<td style="padding: 10px; border: 1px solid #e2e8f0; text-align: center;">
+					{% if doc.pre_bp_systolic and doc.pre_bp_diastolic %}
+					{{ doc.pre_bp_systolic }}/{{ doc.pre_bp_diastolic }}
+					{% else %}N/A{% endif %}
+				</td>
+				<td style="padding: 10px; border: 1px solid #e2e8f0; text-align: center;">
+					{% if doc.post_bp_systolic and doc.post_bp_diastolic %}
+					{{ doc.post_bp_systolic }}/{{ doc.post_bp_diastolic }}
+					{% else %}N/A{% endif %}
+				</td>
+				<td style="padding: 10px; border: 1px solid #e2e8f0; text-align: center;">—</td>
+			</tr>
+			<tr style="background: #f7fafc;">
+				<td style="padding: 10px; border: 1px solid #e2e8f0; font-weight: bold;">Heart Rate (bpm)</td>
+				<td style="padding: 10px; border: 1px solid #e2e8f0; text-align: center;">{{ doc.pre_heart_rate or 'N/A' }}</td>
+				<td style="padding: 10px; border: 1px solid #e2e8f0; text-align: center;">{{ doc.post_heart_rate or 'N/A' }}</td>
+				<td style="padding: 10px; border: 1px solid #e2e8f0; text-align: center;">—</td>
+			</tr>
+			<tr>
+				<td style="padding: 10px; border: 1px solid #e2e8f0; font-weight: bold;">Temperature (°C)</td>
+				<td style="padding: 10px; border: 1px solid #e2e8f0; text-align: center;">{{ doc.pre_temperature or 'N/A' }}</td>
+				<td style="padding: 10px; border: 1px solid #e2e8f0; text-align: center;">{{ doc.post_temperature or 'N/A' }}</td>
+				<td style="padding: 10px; border: 1px solid #e2e8f0; text-align: center;">—</td>
+			</tr>
+		</table>
+	</div>
+
+	<!-- Vital Signs Readings During Session -->
+	{% if doc.vital_signs %}
+	<div class="vital-readings" style="margin-bottom: 25px;">
+		<h4 style="color: #2c5282; font-size: 14px; margin-bottom: 10px;">Intra-Dialytic Vital Signs</h4>
+		<table style="width: 100%; border-collapse: collapse; font-size: 12px;">
+			<thead>
+				<tr style="background: #e2e8f0;">
+					<th style="padding: 8px; border: 1px solid #cbd5e0; text-align: left;">Time</th>
+					<th style="padding: 8px; border: 1px solid #cbd5e0; text-align: center;">BP (mmHg)</th>
+					<th style="padding: 8px; border: 1px solid #cbd5e0; text-align: center;">HR (bpm)</th>
+					<th style="padding: 8px; border: 1px solid #cbd5e0; text-align: center;">Temp (°C)</th>
+					<th style="padding: 8px; border: 1px solid #cbd5e0; text-align: center;">O₂ Sat (%)</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for reading in doc.vital_signs %}
+				<tr style="{% if loop.index % 2 == 0 %}background: #f7fafc;{% endif %}">
+					<td style="padding: 8px; border: 1px solid #e2e8f0;">{{ reading.get_formatted('reading_time') }}</td>
+					<td style="padding: 8px; border: 1px solid #e2e8f0; text-align: center;">
+						{% if reading.bp_systolic and reading.bp_diastolic %}
+						{{ reading.bp_systolic }}/{{ reading.bp_diastolic }}
+						{% else %}—{% endif %}
+					</td>
+					<td style="padding: 8px; border: 1px solid #e2e8f0; text-align: center;">{{ reading.heart_rate or '—' }}</td>
+					<td style="padding: 8px; border: 1px solid #e2e8f0; text-align: center;">{{ reading.temperature or '—' }}</td>
+					<td style="padding: 8px; border: 1px solid #e2e8f0; text-align: center;">{{ reading.oxygen_saturation or '—' }}</td>
+				</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+	</div>
+	{% endif %}
+
+	<!-- Complications / Adverse Events -->
+	{% if doc.complications or doc.adverse_events %}
+	<div class="complications" style="margin-bottom: 25px; padding: 15px; background: #fff5f5; border-left: 4px solid #fc8181; border-radius: 3px;">
+		<h4 style="color: #c53030; margin: 0 0 10px 0; font-size: 14px;">⚠ Complications / Adverse Events</h4>
+		{% if doc.complications %}
+		<p style="margin: 5px 0; font-size: 13px;"><strong>Complications:</strong> {{ doc.complications }}</p>
+		{% endif %}
+		{% if doc.adverse_events %}
+		<p style="margin: 5px 0; font-size: 13px;"><strong>Adverse Events:</strong> {{ doc.adverse_events }}</p>
+		{% endif %}
+	</div>
+	{% endif %}
+
+	<!-- Clinical Notes -->
+	{% if doc.notes %}
+	<div class="notes" style="margin-bottom: 25px; padding: 15px; background: #fffbeb; border-left: 4px solid #f59e0b; border-radius: 3px;">
+		<h4 style="color: #92400e; margin: 0 0 10px 0; font-size: 14px;">Clinical Notes</h4>
+		<p style="margin: 0; color: #78350f; font-size: 13px;">{{ doc.notes }}</p>
+	</div>
+	{% endif %}
+
+	<!-- Signatures -->
+	<div class="signatures" style="margin-top: 40px; padding-top: 20px; border-top: 2px solid #e2e8f0;">
+		<table style="width: 100%; font-size: 13px;">
+			<tr>
+				<td style="width: 50%; padding-right: 20px;">
+					<div style="border-top: 1px solid #000; margin-top: 50px; padding-top: 5px;">
+						<strong>Attending Nurse</strong><br>
+						<span style="color: #666; font-size: 12px;">{{ doc.assigned_nurse or '' }}</span>
+					</div>
+				</td>
+				<td style="width: 50%; padding-left: 20px;">
+					<div style="border-top: 1px solid #000; margin-top: 50px; padding-top: 5px;">
+						<strong>Supervising Physician</strong><br>
+						<span style="color: #666; font-size: 12px;">Date: {{ doc.get_formatted('session_date') }}</span>
+					</div>
+				</td>
+			</tr>
+		</table>
+	</div>
+
+	<!-- Footer -->
+	<div class="footer" style="margin-top: 30px; padding-top: 15px; border-top: 1px solid #e2e8f0; text-align: center; color: #999; font-size: 11px;">
+		<p style="margin: 5px 0;">This is a computer-generated clinical document.</p>
+		<p style="margin: 5px 0;">Printed on: {{ frappe.utils.now_datetime().strftime('%Y-%m-%d %H:%M:%S') }}</p>
+	</div>
+</div>
+
+<style>
+	@media print {
+		.session-report-print {
+			max-width: 100%;
+		}
+		@page {
+			margin: 15mm;
+		}
+	}
+</style>

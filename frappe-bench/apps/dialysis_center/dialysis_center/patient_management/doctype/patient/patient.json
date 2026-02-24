@@ -1,0 +1,260 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:PT-{YYYY}-{#####}",
+ "creation": "2026-02-19 00:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "patient_name",
+  "date_of_birth",
+  "age",
+  "gender",
+  "blood_group",
+  "column_break_1",
+  "national_id",
+  "mobile_number",
+  "email",
+  "emergency_contact",
+  "section_break_2",
+  "address_line_1",
+  "address_line_2",
+  "city",
+  "state",
+  "postal_code",
+  "country",
+  "section_break_3",
+  "diagnosis",
+  "dialysis_type",
+  "access_type",
+  "dry_weight",
+  "frequency",
+  "duration",
+  "section_break_4",
+  "status",
+  "registration_date",
+  "last_session_date",
+  "next_session_date"
+ ],
+ "fields": [
+  {
+   "fieldname": "patient_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Patient Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "date_of_birth",
+   "fieldtype": "Date",
+   "label": "Date of Birth",
+   "reqd": 1
+  },
+  {
+   "fieldname": "age",
+   "fieldtype": "Int",
+   "label": "Age",
+   "read_only": 1
+  },
+  {
+   "fieldname": "gender",
+   "fieldtype": "Select",
+   "label": "Gender",
+   "options": "Male\nFemale\nOther",
+   "reqd": 1
+  },
+  {
+   "fieldname": "blood_group",
+   "fieldtype": "Select",
+   "label": "Blood Group",
+   "options": "\nA+\nA-\nB+\nB-\nAB+\nAB-\nO+\nO-"
+  },
+  {
+   "fieldname": "column_break_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "national_id",
+   "fieldtype": "Data",
+   "label": "National ID",
+   "unique": 1
+  },
+  {
+   "fieldname": "mobile_number",
+   "fieldtype": "Phone",
+   "label": "Mobile Number",
+   "reqd": 1
+  },
+  {
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "label": "Email",
+   "options": "Email"
+  },
+  {
+   "fieldname": "emergency_contact",
+   "fieldtype": "Phone",
+   "label": "Emergency Contact"
+  },
+  {
+   "fieldname": "section_break_2",
+   "fieldtype": "Section Break",
+   "label": "Address Information"
+  },
+  {
+   "fieldname": "address_line_1",
+   "fieldtype": "Data",
+   "label": "Address Line 1"
+  },
+  {
+   "fieldname": "address_line_2",
+   "fieldtype": "Data",
+   "label": "Address Line 2"
+  },
+  {
+   "fieldname": "city",
+   "fieldtype": "Data",
+   "label": "City"
+  },
+  {
+   "fieldname": "state",
+   "fieldtype": "Data",
+   "label": "State/Province"
+  },
+  {
+   "fieldname": "postal_code",
+   "fieldtype": "Data",
+   "label": "Postal Code"
+  },
+  {
+   "fieldname": "country",
+   "fieldtype": "Link",
+   "label": "Country",
+   "options": "Country"
+  },
+  {
+   "fieldname": "section_break_3",
+   "fieldtype": "Section Break",
+   "label": "Medical Information"
+  },
+  {
+   "fieldname": "diagnosis",
+   "fieldtype": "Small Text",
+   "label": "Primary Diagnosis"
+  },
+  {
+   "fieldname": "dialysis_type",
+   "fieldtype": "Select",
+   "label": "Dialysis Type",
+   "options": "\nHemodialysis\nPeritoneal Dialysis\nHemodiafiltration"
+  },
+  {
+   "fieldname": "access_type",
+   "fieldtype": "Select",
+   "label": "Vascular Access Type",
+   "options": "\nAV Fistula\nAV Graft\nCentral Venous Catheter\nPeritoneal Catheter"
+  },
+  {
+   "fieldname": "dry_weight",
+   "fieldtype": "Float",
+   "label": "Dry Weight (kg)",
+   "precision": "2"
+  },
+  {
+   "fieldname": "frequency",
+   "fieldtype": "Select",
+   "label": "Treatment Frequency",
+   "options": "\n2x per week\n3x per week\n4x per week\nDaily"
+  },
+  {
+   "fieldname": "duration",
+   "fieldtype": "Int",
+   "label": "Session Duration (minutes)"
+  },
+  {
+   "fieldname": "section_break_4",
+   "fieldtype": "Section Break",
+   "label": "Status & Dates"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Status",
+   "options": "Active\nInactive\nDischarge\nDeceased",
+   "reqd": 1
+  },
+  {
+   "fieldname": "registration_date",
+   "fieldtype": "Date",
+   "label": "Registration Date"
+  },
+  {
+   "fieldname": "last_session_date",
+   "fieldtype": "Date",
+   "label": "Last Session Date",
+   "read_only": 1
+  },
+  {
+   "fieldname": "next_session_date",
+   "fieldtype": "Date",
+   "label": "Next Session Date",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-02-19 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Patient Management",
+ "name": "Patient",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Dialysis Administrator",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Dialysis Receptionist",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Dialysis Doctor",
+   "share": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Dialysis Nurse",
+   "share": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

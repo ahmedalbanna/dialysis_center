@@ -9,7 +9,7 @@ web: bench serve  --port 8000
 socketio: /teamspace/studios/this_studio/.nvm/versions/node/v22.14.0/bin/node apps/frappe/socketio.js
 
 
-watch: bench watch
+watch: bash -c "source ~/.nvm/nvm.sh && cd apps/frappe && node esbuild --watch --live-reload"
 
 
 schedule: bench schedule

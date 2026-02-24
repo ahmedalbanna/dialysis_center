@@ -1,6 +1,7 @@
 {
  "background_workers": 1,
  "default_site": "frappe.local",
+ "developer_mode": 1,
  "file_watcher_port": 6787,
  "frappe_user": "ahmedalbanna966",
  "gunicorn_workers": 9,

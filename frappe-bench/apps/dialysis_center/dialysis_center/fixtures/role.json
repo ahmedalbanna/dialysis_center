@@ -1,0 +1,83 @@
+[
+	{
+		"doctype": "Role",
+		"name": "Dialysis Administrator",
+		"role_name": "Dialysis Administrator",
+		"desk_access": 1,
+		"disabled": 0,
+		"is_custom": 1,
+		"restrict_to_domain": ""
+	},
+	{
+		"doctype": "Role",
+		"name": "Dialysis Doctor",
+		"role_name": "Dialysis Doctor",
+		"desk_access": 1,
+		"disabled": 0,
+		"is_custom": 1
+	},
+	{
+		"doctype": "Role",
+		"name": "Dialysis Nurse",
+		"role_name": "Dialysis Nurse",
+		"desk_access": 1,
+		"disabled": 0,
+		"is_custom": 1
+	},
+	{
+		"doctype": "Role",
+		"name": "Dialysis Technician",
+		"role_name": "Dialysis Technician",
+		"desk_access": 1,
+		"disabled": 0,
+		"is_custom": 1
+	},
+	{
+		"doctype": "Role",
+		"name": "Dialysis Receptionist",
+		"role_name": "Dialysis Receptionist",
+		"desk_access": 1,
+		"disabled": 0,
+		"is_custom": 1
+	},
+	{
+		"doctype": "Role",
+		"name": "Dialysis Billing Clerk",
+		"role_name": "Dialysis Billing Clerk",
+		"desk_access": 1,
+		"disabled": 0,
+		"is_custom": 1
+	},
+	{
+		"doctype": "Role",
+		"name": "Dialysis Lab Technician",
+		"role_name": "Dialysis Lab Technician",
+		"desk_access": 1,
+		"disabled": 0,
+		"is_custom": 1
+	},
+	{
+		"doctype": "Role",
+		"name": "Dialysis Inventory Manager",
+		"role_name": "Dialysis Inventory Manager",
+		"desk_access": 1,
+		"disabled": 0,
+		"is_custom": 1
+	},
+	{
+		"doctype": "Role",
+		"name": "Dialysis Manager",
+		"role_name": "Dialysis Manager",
+		"desk_access": 1,
+		"disabled": 0,
+		"is_custom": 1
+	},
+	{
+		"doctype": "Role",
+		"name": "Dialysis Viewer",
+		"role_name": "Dialysis Viewer",
+		"desk_access": 1,
+		"disabled": 0,
+		"is_custom": 1
+	}
+]

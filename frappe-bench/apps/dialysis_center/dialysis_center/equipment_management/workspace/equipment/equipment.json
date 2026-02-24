@@ -1,0 +1,93 @@
+{
+ "charts": [
+  {
+   "chart_name": "Maintenance Schedule",
+   "label": "Maintenance Trend"
+  },
+  {
+   "chart_name": "Machine Status",
+   "label": "Machine Status Distribution"
+  },
+  {
+   "chart_name": "Equipment Utilization",
+   "label": "Equipment by Department"
+  }
+ ],
+ "content": "[{\"id\":\"nqTgpuZxU3\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Equipment Management</span>\",\"col\":12}},{\"id\":\"dsHFIXi56D\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Maintenance Trend\",\"col\":12}},{\"id\":\"cEHsg6VFsC\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Machine Status Distribution\",\"col\":12}},{\"id\":\"105pAcX6f_\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Equipment by Department\",\"col\":12}},{\"id\":\"fU5C_q8eCa\",\"type\":\"card\",\"data\":{\"card_name\":\"Machines\",\"col\":6}},{\"id\":\"fo-rCMJ4dA\",\"type\":\"card\",\"data\":{\"card_name\":\"Maintenance\",\"col\":6}}]",
+ "creation": "2026-02-20 00:10:40",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "setting-gear",
+ "idx": 5,
+ "indicator_color": "",
+ "is_hidden": 0,
+ "label": "Equipment",
+ "links": [
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Machines",
+   "link_count": 0,
+   "link_to": "",
+   "link_type": "Page",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Dialysis Machine",
+   "link_count": 0,
+   "link_to": "Dialysis Machine",
+   "link_type": "DocType",
+   "onboard": 1,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Maintenance",
+   "link_count": 0,
+   "link_to": "",
+   "link_type": "Page",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Machine Maintenance",
+   "link_count": 0,
+   "link_to": "Machine Maintenance",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Machine Utilization Report",
+   "link_count": 0,
+   "link_to": "Machine Utilization Report",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  }
+ ],
+ "modified": "2026-02-21 23:19:28.493862",
+ "modified_by": "Administrator",
+ "module": "Equipment Management",
+ "name": "Equipment",
+ "number_cards": [],
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [],
+ "sequence_id": 5.0,
+ "shortcuts": [],
+ "title": "Equipment"
+}

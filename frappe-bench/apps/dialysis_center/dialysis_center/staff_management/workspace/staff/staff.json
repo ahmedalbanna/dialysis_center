@@ -1,0 +1,82 @@
+{
+ "charts": [
+  {
+   "chart_name": "Shift Schedule",
+   "label": "Scheduled Shifts Trend"
+  },
+  {
+   "chart_name": "Staff by Department",
+   "label": "Active Staff by Department"
+  },
+  {
+   "chart_name": "Staff Status",
+   "label": "Staff Status Distribution"
+  }
+ ],
+ "content": "[{\"id\":\"HJFDfdehqk\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Staff Management</span>\",\"col\":12}},{\"id\":\"ulZiByC_u6\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Active Staff by Department\",\"col\":12}},{\"id\":\"Gmm1TToSz1\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Scheduled Shifts Trend\",\"col\":12}},{\"id\":\"d4oKnggZvE\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Staff Status Distribution\",\"col\":12}}]",
+ "creation": "2026-02-20 00:10:40",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "users",
+ "idx": 8,
+ "is_hidden": 0,
+ "label": "Staff",
+ "links": [
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Team",
+   "link_count": 0,
+   "link_to": "About Us Team Member",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Staff",
+   "link_count": 0,
+   "link_to": "Staff",
+   "link_type": "DocType",
+   "onboard": 1,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Scheduling",
+   "link_count": 0,
+   "link_to": "Appointment",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Shift",
+   "link_count": 0,
+   "link_to": "Shift",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  }
+ ],
+ "modified": "2026-02-21 23:24:50.775964",
+ "modified_by": "Administrator",
+ "module": "Staff Management",
+ "name": "Staff",
+ "number_cards": [],
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [],
+ "sequence_id": 8.0,
+ "shortcuts": [],
+ "title": "Staff"
+}

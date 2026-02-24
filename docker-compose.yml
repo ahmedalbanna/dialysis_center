@@ -42,7 +42,7 @@ services:
     ports:
       - "3306:3306"
     volumes:
-      - mariadb_data:/var/lib/mysql
+      - ./mariadb-data:/var/lib/mysql
       - ./mariadb-config:/etc/mysql/conf.d
     networks:
       - frappe-network
@@ -105,8 +105,6 @@ services:
       retries: 3
 
 volumes:
-  mariadb_data:
-    driver: local
   redis_cache_data:
     driver: local
   redis_queue_data:

@@ -1,0 +1,175 @@
+(env) ⚡ main ~/frappe-bench bench install-app dialysis_center  
+
+Installing dialysis_center...
+Updating DocTypes for dialysis_center: [========================================] 100%
+
+======================================================================
+🏥 DIALYSIS CENTER APP - POST-INSTALLATION SETUP
+======================================================================
+
+📦 Loading fixtures...
+🔄 Loading fixtures...
+
+📄 Loading role.json...
+  - Role 'Dialysis Administrator' already exists
+  - Role 'Dialysis Doctor' already exists
+  - Role 'Dialysis Nurse' already exists
+  - Role 'Dialysis Technician' already exists
+  - Role 'Dialysis Receptionist' already exists
+  - Role 'Dialysis Billing Clerk' already exists
+  - Role 'Dialysis Lab Technician' already exists
+  - Role 'Dialysis Inventory Manager' already exists
+  - Role 'Dialysis Manager' already exists
+  - Role 'Dialysis Viewer' already exists
+  ✅ Loaded 0 records from role.json
+
+📄 Loading treatment_template.json...
+  ✗ Error creating Treatment Template: 'TreatmentTemplate' object has no attribute 'session_duration'
+  ✗ Error creating Treatment Template: 'TreatmentTemplate' object has no attribute 'session_duration'
+  ✗ Error creating Treatment Template: 'TreatmentTemplate' object has no attribute 'session_duration'
+  ✗ Error creating Treatment Template: 'TreatmentTemplate' object has no attribute 'session_duration'
+  ✗ Error creating Treatment Template: 'TreatmentTemplate' object has no attribute 'session_duration'
+  ✅ Loaded 0 records from treatment_template.json
+- Role already exists: Dialysis Administrator
+- Role already exists: Dialysis Doctor
+- Role already exists: Dialysis Nurse
+- Role already exists: Dialysis Technician
+- Role already exists: Dialysis Receptionist
+✓ Created machine: DM-001 - Fresenius 5008S #1
+✓ Created machine: DM-002 - Fresenius 5008S #2
+✓ Created machine: DM-003 - Gambro AK 200
+✓ Created patient: PT-2026-00003 - John Smith
+✓ Created patient: PT-2026-00004 - Mary Johnson
+\n✅ All fixtures loaded successfully!
+
+🔧 Developer mode detected!
+
+💡 TIP: To auto-seed test data on install, add to site_config.json:
+   "dialysis_center_auto_seed_data": true
+
+   Or run manually:
+   bench --site [sitename] dialysis-center seed-data
+
+✅ Dialysis Center installation complete!
+======================================================================
+
+An error occurred while installing dialysis_center: 'TreatmentTemplate' object has no attribute 'session_duration'
+Traceback with variables (most recent call last):
+  File "apps/frappe/frappe/commands/site.py", line 494, in install_app
+    _install_app(app, verbose=context.verbose, force=force)
+      context = {'sites': ['frappe.local'], 'force': False, 'verbose': False, 'profile': False}
+      apps = ('dialysis_center',)
+      force = False
+      _install_app = <function install_app at 0x7547b43efec0>
+      filelock = <function filelock at 0x7547b5098c20>
+      exit_code = 0
+      site = 'frappe.local'
+      app = 'dialysis_center'
+      err = AttributeError("'TreatmentTemplate' object has no attribute 'session_duration'")
+  File "apps/frappe/frappe/installer.py", line 334, in install_app
+    sync_fixtures(name)
+      name = 'dialysis_center'
+      verbose = False
+      set_as_patched = True
+      force = False
+      sync_jobs = <function sync_jobs at 0x7547b439e160>
+      sync_for = <function sync_for at 0x7547b439ee80>
+      sync_customizations = <function sync_customizations at 0x7547b45a7c40>
+      sync_fixtures = <function sync_fixtures at 0x7547b439f1a0>
+      app_hooks = {'after_install': ['dialysis_center.install.after_install'], 'app_description': ['Dialysis Center Management System'], 'app_email': ['ahmed@example.com'], 'app_include_css': ['/assets/dialysis_center/css/dialysis_center.css', '/assets/dialysis_center/css/responsive_design.css'], 'app_include_js': ['hot-reload.bundle.js'], 'app_license': ['MIT'], 'app_name': ['dialysis_center'], 'app_publisher': ['Ahmed Albanna'], 'app_title': ['Dialysis Center'], 'app_version': ['0.0.1'], 'before_uninstall': ['dialysis_center.install.before_uninstall'], 'doc_events': {'Appointment': {'before_insert': ['dialysis_center.workflows.hooks_automation.appointment_before_insert'], 'before_save': ['dialysis_center.workflows.hooks_automation.appointment_before_save'], 'on_submit': ['dialysis_center.workflows.hooks_automation.appointment_on_submit'], 'on_cancel': ['dialysis_center.workflows.hooks_automation.appointment_on_cancel']}, 'Dialysis Session': {'before_insert': ['dialysis_center.workflows.hooks_automatio...
+      installed_apps = ['frappe']
+      after_install = 'dialysis_center.install.after_install'
+  File "apps/frappe/frappe/utils/fixtures.py", line 22, in sync_fixtures
+    import_fixtures(app)
+      app = 'dialysis_center'
+      apps = ['dialysis_center']
+  File "apps/frappe/frappe/utils/fixtures.py", line 41, in import_fixtures
+    import_doc(file_path)
+      app = 'dialysis_center'
+      fixtures_path = 'apps/dialysis_center/dialysis_center/fixtures'
+      fixture_files = ['README_DEV_DATA_SEEDING.md', '__pycache__', 'load_fixtures.py', 'role.json', 'seed_dev_data.py', 'treatment_template.json', 'workflow.json']
+      fname = 'treatment_template.json'
+      file_path = 'apps/dialysis_center/dialysis_center/fixtures/treatment_template.json'
+  File "apps/frappe/frappe/core/doctype/data_import/data_import.py", line 289, in import_doc
+    import_file_by_path(
+      path = 'apps/dialysis_center/dialysis_center/fixtures/treatment_template.json'
+      pre_process = None
+      f = 'apps/dialysis_center/dialysis_center/fixtures/treatment_template.json'
+      files = ['apps/dialysis_center/dialysis_center/fixtures/treatment_template.json']
+  File "apps/frappe/frappe/modules/import_file.py", line 146, in import_file_by_path
+    import_doc(
+      path = 'apps/dialysis_center/dialysis_center/fixtures/treatment_template.json'
+      force = True
+      data_import = True
+      pre_process = None
+      ignore_version = None
+      reset_permissions = True
+      docs = [{'doctype': 'Treatment Template', 'name': 'Standard Hemodialysis', 'template_name': 'Standard Hemodialysis', 'dialysis_modality': 'Hemodialysis', 'treatment_duration': 240, 'blood_flow_rate': 300, 'dialysate_flow_rate': 500, 'dialyzer_type': 'F60', 'is_active': 1, 'description': 'Standard 4-hour hemodialysis treatment', '__islocal': 1}, {'doctype': 'Treatment Template', 'name': 'Short Hemodialysis', 'template_name': 'Short Hemodialysis', 'dialysis_modality': 'Hemodialysis', 'treatment_duration': 180, 'blood_flow_rate': 350, 'dialysate_flow_rate': 600, 'dialyzer_type': 'F80', 'is_active': 1, 'description': 'Short 3-hour high-efficiency dialysis'}, {'doctype': 'Treatment Template', 'name': 'Hemodiafiltration', 'template_name': 'Hemodiafiltration', 'dialysis_modality': 'Hemodiafiltration', 'treatment_duration': 240, 'blood_flow_rate': 350, 'dialysate_flow_rate': 500, 'dialyzer_type': 'FX80', 'is_active': 1, 'description': 'High-flux hemodiafiltration treatment'}, {'doctype': 'Treatment T...
+      calculated_hash = '588ff19cdc1e9e49e186d4150638769f'
+      doc = {'doctype': 'Treatment Template', 'name': 'Standard Hemodialysis', 'template_name': 'Standard Hemodialysis', 'dialysis_modality': 'Hemodialysis', 'treatment_duration': 240, 'blood_flow_rate': 300, 'dialysate_flow_rate': 500, 'dialyzer_type': 'F60', 'is_active': 1, 'description': 'Standard 4-hour hemodialysis treatment', '__islocal': 1}
+      db_modified_timestamp = None
+      is_db_timestamp_latest = None
+  File "apps/frappe/frappe/modules/import_file.py", line 239, in import_doc
+    doc.insert()
+      docdict = {'doctype': 'Treatment Template', 'name': 'Standard Hemodialysis', 'template_name': 'Standard Hemodialysis', 'dialysis_modality': 'Hemodialysis', 'treatment_duration': 240, 'blood_flow_rate': 300, 'dialysate_flow_rate': 500, 'dialyzer_type': 'F60', 'is_active': 1, 'description': 'Standard 4-hour hemodialysis treatment', '__islocal': 1}
+      data_import = True
+      pre_process = None
+      ignore_version = None
+      reset_permissions = True
+      path = 'apps/dialysis_center/dialysis_center/fixtures/treatment_template.json'
+      controller = <class 'dialysis_center.patient_management.doctype.treatment_template.treatment_template.TreatmentTemplate'>
+      doc = <TreatmentTemplate: Standard Hemodialysis>
+  File "apps/frappe/frappe/model/document.py", line 309, in insert
+    self.run_before_save_methods()
+      self = <TreatmentTemplate: Standard Hemodialysis>
+      ignore_permissions = None
+      ignore_links = None
+      ignore_if_duplicate = False
+      ignore_mandatory = None
+      set_name = None
+      set_child_names = True
+  File "apps/frappe/frappe/model/document.py", line 1140, in run_before_save_methods
+    self.run_method("validate")
+      self = <TreatmentTemplate: Standard Hemodialysis>
+  File "apps/frappe/frappe/model/document.py", line 1011, in run_method
+    out = Document.hook(fn)(self, *args, **kwargs)
+      self = <TreatmentTemplate: Standard Hemodialysis>
+      method = 'validate'
+      args = ()
+      kwargs = {}
+      fn = <function Document.run_method.<locals>.fn at 0x7547b2b08a40>
+  File "apps/frappe/frappe/model/document.py", line 1371, in composer
+    return composed(self, method, *args, **kwargs)
+      self = <TreatmentTemplate: Standard Hemodialysis>
+      args = ()
+      kwargs = {}
+      hooks = []
+      method = 'validate'
+      doc_events = {'*': {'on_update': ['frappe.desk.notifications.clear_doctype_notifications', 'frappe.workflow.doctype.workflow_action.workflow_action.process_workflow_actions', 'frappe.core.doctype.file.utils.attach_files_to_document', 'frappe.automation.doctype.assignment_rule.assignment_rule.apply', 'frappe.automation.doctype.assignment_rule.assignment_rule.update_due_date', 'frappe.core.doctype.user_type.user_type.apply_permissions_for_non_standard_user_type', 'frappe.search.sqlite_search.update_doc_index'], 'after_rename': ['frappe.desk.notifications.clear_doctype_notifications'], 'on_cancel': ['frappe.desk.notifications.clear_doctype_notifications', 'frappe.workflow.doctype.workflow_action.workflow_action.process_workflow_actions', 'frappe.automation.doctype.assignment_rule.assignment_rule.apply'], 'on_trash': ['frappe.desk.notifications.clear_doctype_notifications', 'frappe.workflow.doctype.workflow_action.workflow_action.process_workflow_actions', 'frappe.search.sqlite_search.delete_doc_index'...
+      composed = <function Document.hook.<locals>.compose.<locals>.runner at 0x7547b2b08680>
+      compose = <function Document.hook.<locals>.compose at 0x7547b2b082c0>
+      f = <function Document.run_method.<locals>.fn at 0x7547b2b08a40>
+  File "apps/frappe/frappe/model/document.py", line 1353, in runner
+    add_to_return_value(self, fn(self, *args, **kwargs))
+      self = <TreatmentTemplate: Standard Hemodialysis>
+      method = 'validate'
+      args = ()
+      kwargs = {}
+      add_to_return_value = <function Document.hook.<locals>.add_to_return_value at 0x7547b2b08040>
+      fn = <function Document.run_method.<locals>.fn at 0x7547b2b08a40>
+      hooks = ()
+  File "apps/frappe/frappe/model/document.py", line 1008, in fn
+    return method_object(*args, **kwargs)
+      self = <TreatmentTemplate: Standard Hemodialysis>
+      args = ()
+      kwargs = {}
+      method_object = <bound method TreatmentTemplate.validate of <TreatmentTemplate: Standard Hemodialysis>>
+      method = 'validate'
+  File "apps/dialysis_center/dialysis_center/patient_management/doctype/treatment_template/treatment_template.py", line 9, in validate
+    self.validate_template_completeness()
+      self = <TreatmentTemplate: Standard Hemodialysis>
+  File "apps/dialysis_center/dialysis_center/patient_management/doctype/treatment_template/treatment_template.py", line 18, in validate_template_completeness
+    if not self.session_duration:
+      self = <TreatmentTemplate: Standard Hemodialysis>
+builtins.AttributeError: 'TreatmentTemplate' object has no attribute 'session_duration'
+(env) ⚡ main ~/frappe-bench 

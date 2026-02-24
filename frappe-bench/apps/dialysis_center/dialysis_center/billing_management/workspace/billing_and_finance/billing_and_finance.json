@@ -1,0 +1,123 @@
+{
+ "charts": [
+  {
+   "chart_name": "Invoice Status",
+   "label": "Invoice Status Distribution"
+  },
+  {
+   "chart_name": "Payment Methods",
+   "label": "Payments by Method"
+  },
+  {
+   "chart_name": "Revenue Trend",
+   "label": "Monthly Revenue Trend"
+  }
+ ],
+ "content": "[{\"id\":\"Pb2fIy0ptk\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Billing and Finance</span>\",\"col\":12}},{\"id\":\"y-ubbxCudj\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Invoice Status Distribution\",\"col\":12}},{\"id\":\"SGyiFJZqLh\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Payments by Method\",\"col\":12}},{\"id\":\"1scvMdHRfr\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Monthly Revenue Trend\",\"col\":12}},{\"id\":\"2wrorPmTy3\",\"type\":\"card\",\"data\":{\"card_name\":\"Invoicing\",\"col\":4}},{\"id\":\"hd2THIUgR9\",\"type\":\"card\",\"data\":{\"card_name\":\"Payments\",\"col\":4}},{\"id\":\"OmTWmL_TSl\",\"type\":\"card\",\"data\":{\"card_name\":\"Reporting\",\"col\":4}}]",
+ "creation": "2026-02-20 00:10:40",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "money-coins-1",
+ "idx": 3,
+ "indicator_color": "",
+ "is_hidden": 0,
+ "label": "Billing and Finance",
+ "links": [
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Invoicing",
+   "link_count": 0,
+   "link_to": "",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Invoice",
+   "link_count": 0,
+   "link_to": "Invoice",
+   "link_type": "DocType",
+   "onboard": 1,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Price List",
+   "link_count": 0,
+   "link_to": "Price List",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Payments",
+   "link_count": 0,
+   "link_to": "",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Payment",
+   "link_count": 0,
+   "link_to": "Payment",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Insurance Claim",
+   "link_count": 0,
+   "link_to": "Insurance Claim",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Reporting",
+   "link_count": 0,
+   "link_to": "",
+   "link_type": "Page",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Financial Summary",
+   "link_count": 0,
+   "link_to": "Financial Summary",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  }
+ ],
+ "modified": "2026-02-21 23:16:43.778256",
+ "modified_by": "Administrator",
+ "module": "Billing Management",
+ "name": "Billing and Finance",
+ "number_cards": [],
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [],
+ "sequence_id": 4.0,
+ "shortcuts": [],
+ "title": "Billing and Finance"
+}

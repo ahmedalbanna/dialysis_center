@@ -1,0 +1,395 @@
+{
+ "charts": [
+  {
+   "chart_name": "Patient Census",
+   "chart_type": "Pie",
+   "doctype": "Patient",
+   "filters": {},
+   "group_by_type": "status",
+   "is_public": 1,
+   "label": "Active Patients by Status"
+  },
+  {
+   "chart_name": "Revenue Overview",
+   "chart_type": "Line",
+   "doctype": "Invoice",
+   "filters": {"docstatus": 1},
+   "group_by_type": "creation",
+   "is_public": 1,
+   "label": "Revenue Trend"
+  },
+  {
+   "chart_name": "Equipment Status",
+   "chart_type": "Pie",
+   "doctype": "Dialysis Machine",
+   "filters": {},
+   "group_by_type": "status",
+   "is_public": 1,
+   "label": "Equipment Status Overview"
+  },
+  {
+   "chart_name": "Appointment Overview",
+   "chart_type": "Bar",
+   "doctype": "Appointment",
+   "filters": {},
+   "group_by_type": "status",
+   "is_public": 1,
+   "label": "Appointments by Status"
+  },
+  {
+   "chart_name": "Staff Overview",
+   "chart_type": "Pie",
+   "doctype": "Staff",
+   "filters": {},
+   "group_by_type": "status",
+   "is_public": 1,
+   "label": "Staff Status Distribution"
+  },
+  {
+   "chart_name": "Outstanding Receivables",
+   "chart_type": "Bar",
+   "doctype": "Invoice",
+   "filters": {"payment_status": "Unpaid"},
+   "group_by_type": "creation",
+   "is_public": 1,
+   "label": "Outstanding Invoices"
+  }
+ ],
+ "content": "[{\"type\":\"header\",\"data\":{\"text\":\"Dialysis Center Management\",\"col\":12}},{\"type\":\"card\",\"data\":{\"card_name\":\"Patient Management\",\"col\":4}},{\"type\":\"card\",\"data\":{\"card_name\":\"Clinical Operations\",\"col\":4}},{\"type\":\"card\",\"data\":{\"card_name\":\"Billing & Finance\",\"col\":4}},{\"type\":\"card\",\"data\":{\"card_name\":\"Staff & Inventory\",\"col\":4}},{\"type\":\"card\",\"data\":{\"card_name\":\"Reports\",\"col\":4}}]",
+ "creation": "2026-02-19 04:00:00.000000",
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "health",
+ "idx": 0,
+ "is_hidden": 0,
+ "label": "Dialysis Center",
+ "links": [
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Patient Management",
+   "link_count": 0,
+   "link_to": "Patient Management",
+   "link_type": "Workspace",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Patient",
+   "link_count": 0,
+   "link_to": "Patient",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Treatment Template",
+   "link_count": 0,
+   "link_to": "Treatment Template",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Vital Signs Log",
+   "link_count": 0,
+   "link_to": "Vital Signs Log",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Clinical Operations",
+   "link_count": 0,
+   "link_to": "Appointments",
+   "link_type": "Workspace",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Appointment",
+   "link_count": 0,
+   "link_to": "Appointment",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Dialysis Session",
+   "link_count": 0,
+   "link_to": "Dialysis Session",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Lab Test",
+   "link_count": 0,
+   "link_to": "Lab Test",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Equipment",
+   "link_count": 0,
+   "link_to": "Equipment",
+   "link_type": "Workspace",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Laboratory",
+   "link_count": 0,
+   "link_to": "Laboratory",
+   "link_type": "Workspace",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Billing & Finance",
+   "link_count": 0,
+   "link_to": "Billing and Finance",
+   "link_type": "Workspace",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Invoice",
+   "link_count": 0,
+   "link_to": "Invoice",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Payment",
+   "link_count": 0,
+   "link_to": "Payment",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Insurance Claim",
+   "link_count": 0,
+   "link_to": "Insurance Claim",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Staff & Inventory",
+   "link_count": 0,
+   "link_to": "Staff",
+   "link_type": "Workspace",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Staff",
+   "link_count": 0,
+   "link_to": "Staff",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Shift",
+   "link_count": 0,
+   "link_to": "Shift",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Medication",
+   "link_count": 0,
+   "link_to": "Medication",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Stock Movement",
+   "link_count": 0,
+   "link_to": "Stock Movement",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Dialysis Machine",
+   "link_count": 0,
+   "link_to": "Dialysis Machine",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Inventory",
+   "link_count": 0,
+   "link_to": "Inventory",
+   "link_type": "Workspace",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Insurance",
+   "link_count": 0,
+   "link_to": "Insurance",
+   "link_type": "Workspace",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Reports",
+   "link_count": 0,
+   "link_to": "",
+   "link_type": "Card Break",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Patient Treatment History",
+   "link_count": 0,
+   "link_to": "Patient Treatment History",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Machine Utilization Report",
+   "link_count": 0,
+   "link_to": "Machine Utilization Report",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Financial Summary",
+   "link_count": 0,
+   "link_to": "Financial Summary",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Lab Results Trending",
+   "link_count": 0,
+   "link_to": "Lab Results Trending",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Appointment Analytics",
+   "link_count": 0,
+   "link_to": "Appointment Analytics",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  }
+ ],
+ "modified": "2026-02-19 04:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Dialysis Center Management",
+ "name": "Dialysis Center",
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [],
+ "sequence_id": 1,
+ "shortcuts": [
+  {
+   "color": "Green",
+   "format": "{} Open",
+   "label": "Patient",
+   "link_to": "Patient",
+   "stats_filter": "{\"status\": \"Active\"}",
+   "type": "DocType"
+  },
+  {
+   "color": "Blue",
+   "format": "{} Today",
+   "label": "Appointment",
+   "link_to": "Appointment",
+   "stats_filter": "{\"appointment_date\": [\"Today\"]}",
+   "type": "DocType"
+  },
+  {
+   "color": "Orange",
+   "format": "{} Active",
+   "label": "Session",
+   "link_to": "Dialysis Session",
+   "stats_filter": "{\"status\": \"In Progress\"}",
+   "type": "DocType"
+  },
+  {
+   "color": "Red",
+   "format": "{} Unpaid",
+   "label": "Invoice",
+   "link_to": "Invoice",
+   "stats_filter": "{\"payment_status\": \"Unpaid\"}",
+   "type": "DocType"
+  }
+ ],
+ "title": "Dialysis Center"
+}

@@ -1,0 +1,11 @@
+Metadata-Version: 2.4
+Name: dialysis_center
+Version: 0.0.1
+Summary: Dialysis Center Management System
+Author: Ahmed Albanna
+Author-email: ahmed@example.com
+Requires-Dist: frappe
+Dynamic: author
+Dynamic: author-email
+Dynamic: requires-dist
+Dynamic: summary

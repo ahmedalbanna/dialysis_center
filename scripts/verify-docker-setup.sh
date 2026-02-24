@@ -37,7 +37,7 @@ echo ""
 echo "========================================"
 echo "Service Health Checks"
 echo "========================================"
-./docker-commands.sh health
+~/scripts/docker-commands.sh health
 
 echo ""
 echo "========================================"

@@ -1,0 +1,65 @@
+{
+ "actions": [],
+ "creation": "2026-02-19 03:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "time",
+  "systolic_bp",
+  "diastolic_bp",
+  "heart_rate",
+  "temperature",
+  "notes"
+ ],
+ "fields": [
+  {
+   "fieldname": "time",
+   "fieldtype": "Time",
+   "in_list_view": 1,
+   "label": "Time",
+   "reqd": 1
+  },
+  {
+   "fieldname": "systolic_bp",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Systolic BP (mmHg)"
+  },
+  {
+   "fieldname": "diastolic_bp",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Diastolic BP (mmHg)"
+  },
+  {
+   "fieldname": "heart_rate",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Heart Rate (bpm)"
+  },
+  {
+   "fieldname": "temperature",
+   "fieldtype": "Float",
+   "label": "Temperature (°C)",
+   "precision": "1"
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Small Text",
+   "label": "Notes"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2026-02-19 03:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Patient Management",
+ "name": "Vital Signs Log",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

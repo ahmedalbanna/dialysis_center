@@ -1,0 +1,160 @@
+{
+	"charts": [
+		{
+			"chart_name": "Invoice Status",
+			"chart_type": "Pie",
+			"doctype": "Invoice",
+			"filters": {},
+			"group_by_type": "payment_status",
+			"is_public": 1,
+			"label": "Invoice Status Distribution"
+		},
+		{
+			"chart_name": "Revenue Trend",
+			"chart_type": "Line",
+			"doctype": "Invoice",
+			"filters": {"docstatus": 1},
+			"group_by_type": "creation",
+			"is_public": 1,
+			"label": "Monthly Revenue Trend"
+		},
+		{
+			"chart_name": "Payment Methods",
+			"chart_type": "Bar",
+			"doctype": "Payment",
+			"filters": {},
+			"group_by_type": "payment_method",
+			"is_public": 1,
+			"label": "Payments by Method"
+		}
+	],
+	"content": "[{\"type\":\"header\",\"data\":{\"text\":\"Billing and Finance\",\"col\":12}},{\"type\":\"card\",\"data\":{\"card_name\":\"Invoicing\",\"col\":4}},{\"type\":\"card\",\"data\":{\"card_name\":\"Payments\",\"col\":4}},{\"type\":\"card\",\"data\":{\"card_name\":\"Reporting\",\"col\":4}}]",
+	"creation": "2026-02-20 00:10:40.000000",
+	"docstatus": 0,
+	"doctype": "Workspace",
+	"for_user": "",
+	"hide_custom": 0,
+	"icon": "dollar-sign",
+	"idx": 3,
+	"is_hidden": 0,
+	"label": "Billing and Finance",
+	"links": [
+		{
+			"hidden": 0,
+			"is_query_report": 0,
+			"label": "Invoicing",
+			"link_count": 0,
+			"link_to": "",
+			"link_type": "Card Break",
+			"onboard": 0,
+			"type": "Link"
+		},
+		{
+			"hidden": 0,
+			"is_query_report": 0,
+			"label": "Invoice",
+			"link_count": 0,
+			"link_to": "Invoice",
+			"link_type": "DocType",
+			"onboard": 1,
+			"type": "Link"
+		},
+		{
+			"hidden": 0,
+			"is_query_report": 0,
+			"label": "Price List",
+			"link_count": 0,
+			"link_to": "Price List",
+			"link_type": "DocType",
+			"onboard": 0,
+			"type": "Link"
+		},
+		{
+			"hidden": 0,
+			"is_query_report": 0,
+			"label": "Payments",
+			"link_count": 0,
+			"link_to": "",
+			"link_type": "Card Break",
+			"onboard": 0,
+			"type": "Link"
+		},
+		{
+			"hidden": 0,
+			"is_query_report": 0,
+			"label": "Payment",
+			"link_count": 0,
+			"link_to": "Payment",
+			"link_type": "DocType",
+			"onboard": 0,
+			"type": "Link"
+		},
+		{
+			"hidden": 0,
+			"is_query_report": 0,
+			"label": "Insurance Claim",
+			"link_count": 0,
+			"link_to": "Insurance Claim",
+			"link_type": "DocType",
+			"onboard": 0,
+			"type": "Link"
+		},
+		{
+			"hidden": 0,
+			"is_query_report": 1,
+			"label": "Reporting",
+			"link_count": 0,
+			"link_to": "",
+			"link_type": "Card Break",
+			"onboard": 0,
+			"type": "Link"
+		},
+		{
+			"hidden": 0,
+			"is_query_report": 1,
+			"label": "Financial Summary",
+			"link_count": 0,
+			"link_to": "Financial Summary",
+			"link_type": "Report",
+			"onboard": 0,
+			"type": "Link"
+		}
+	],
+	"modified": "2026-02-20 00:10:40.000000",
+	"modified_by": "Administrator",
+	"module": "Billing Management",
+	"name": "Billing and Finance",
+	"owner": "Administrator",
+	"parent_page": "",
+	"public": 1,
+	"quick_lists": [],
+	"roles": [],
+	"sequence_id": 4,
+	"shortcuts": [
+		{
+			"color": "Red",
+			"format": "{} Unpaid",
+			"label": "Unpaid Invoices",
+			"link_to": "Invoice",
+			"stats_filter": "{\"payment_status\": \"Unpaid\"}",
+			"type": "DocType"
+		},
+		{
+			"color": "Orange",
+			"format": "{} Pending",
+			"label": "Pending Payments",
+			"link_to": "Payment",
+			"stats_filter": "{\"status\": \"Pending\"}",
+			"type": "DocType"
+		},
+		{
+			"color": "Green",
+			"format": "{} Completed",
+			"label": "Completed Payments",
+			"link_to": "Payment",
+			"stats_filter": "{\"status\": \"Completed\"}",
+			"type": "DocType"
+		}
+	],
+	"title": "Billing and Finance"
+}

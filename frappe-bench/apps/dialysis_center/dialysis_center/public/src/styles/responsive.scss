@@ -1,0 +1,126 @@
+/**
+ * Dialysis Center - Responsive Design
+ * Mobile-first responsive utilities and breakpoints
+ */
+
+// Breakpoints
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
+
+// Mobile-first utilities
+.hide-mobile {
+	@media (max-width: $breakpoint-md) {
+		display: none !important;
+	}
+}
+
+.show-mobile {
+	display: none !important;
+	
+	@media (max-width: $breakpoint-md) {
+		display: block !important;
+	}
+}
+
+// Responsive padding
+.responsive-padding {
+	padding: 20px;
+	
+	@media (max-width: $breakpoint-md) {
+		padding: 12px;
+	}
+	
+	@media (max-width: $breakpoint-sm) {
+		padding: 8px;
+	}
+}
+
+// Responsive grid
+.responsive-grid {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 16px;
+	
+	@media (max-width: $breakpoint-lg) {
+		grid-template-columns: repeat(3, 1fr);
+	}
+	
+	@media (max-width: $breakpoint-md) {
+		grid-template-columns: repeat(2, 1fr);
+		gap: 12px;
+	}
+	
+	@media (max-width: $breakpoint-sm) {
+		grid-template-columns: 1fr;
+		gap: 8px;
+	}
+}
+
+// Touch-friendly buttons on mobile
+@media (max-width: $breakpoint-md) {
+	.btn {
+		min-height: 44px;
+		padding: 10px 16px;
+	}
+	
+	.btn-sm {
+		min-height: 38px;
+		padding: 8px 12px;
+	}
+}
+
+// Responsive tables
+.responsive-table {
+	@media (max-width: $breakpoint-md) {
+		display: block;
+		overflow-x: auto;
+		-webkit-overflow-scrolling: touch;
+		
+		table {
+			min-width: 600px;
+		}
+	}
+}
+
+// Stack on mobile
+.stack-mobile {
+	@media (max-width: $breakpoint-md) {
+		flex-direction: column !important;
+		
+		> * {
+			width: 100% !important;
+			margin-right: 0 !important;
+			margin-bottom: 8px;
+		}
+	}
+}
+
+// Form responsive
+.form-responsive {
+	.form-group {
+		@media (max-width: $breakpoint-md) {
+			margin-bottom: 16px;
+		}
+	}
+	
+	.form-control {
+		@media (max-width: $breakpoint-sm) {
+			font-size: 16px; // Prevent zoom on iOS
+		}
+	}
+}
+
+// Card responsive
+.card-responsive {
+	@media (max-width: $breakpoint-md) {
+		margin-bottom: 12px;
+		padding: 12px;
+	}
+	
+	@media (max-width: $breakpoint-sm) {
+		margin-bottom: 8px;
+		padding: 10px;
+	}
+}

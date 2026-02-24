@@ -1,0 +1,113 @@
+{
+ "charts": [
+  {
+   "chart_name": "Patient Status Distribution",
+   "label": "Patient Status Distribution"
+  },
+  {
+   "chart_name": "Patient Registration Trend",
+   "label": "Patient Registration Trend"
+  },
+  {
+   "chart_name": "Patient Demographics",
+   "label": "Patients by Blood Type"
+  }
+ ],
+ "content": "[{\"id\":\"X1ltiTYILw\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Patient Management</span>\",\"col\":12}},{\"id\":\"mLRTk_cZ1T\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Patient Status Distribution\",\"col\":12}},{\"id\":\"J1SmKd46yi\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Patient Registration Trend\",\"col\":12}},{\"id\":\"BFAFfCsn3f\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Patients by Blood Type\",\"col\":12}},{\"id\":\"wO7fuy2PAo\",\"type\":\"card\",\"data\":{\"card_name\":\"Patient Records\",\"col\":6}},{\"id\":\"GjCLZXjL05\",\"type\":\"card\",\"data\":{\"card_name\":\"Medical History\",\"col\":6}}]",
+ "creation": "2026-02-20 00:10:40",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "share",
+ "idx": 1,
+ "indicator_color": "",
+ "is_hidden": 0,
+ "label": "Patient Management",
+ "links": [
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Patient Records",
+   "link_count": 0,
+   "link_to": "",
+   "link_type": "Page",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Patient",
+   "link_count": 0,
+   "link_to": "Patient",
+   "link_type": "DocType",
+   "onboard": 1,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Patient Document",
+   "link_count": 0,
+   "link_to": "Patient Document",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Medical History",
+   "link_count": 0,
+   "link_to": "",
+   "link_type": "Page",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Vital Signs Log",
+   "link_count": 0,
+   "link_to": "Vital Signs Log",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Patient Medical History Item",
+   "link_count": 0,
+   "link_to": "Patient Medical History Item",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Patient Treatment History",
+   "link_count": 0,
+   "link_to": "Patient Treatment History",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  }
+ ],
+ "modified": "2026-02-21 22:57:45.361258",
+ "modified_by": "Administrator",
+ "module": "Patient Management",
+ "name": "Patient Management",
+ "number_cards": [],
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [],
+ "sequence_id": 2.0,
+ "shortcuts": [],
+ "title": "Patient Management"
+}

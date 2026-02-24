@@ -1,2 +1,3 @@
 frappe
 erpnext_arabic_layout
+dialysis_center

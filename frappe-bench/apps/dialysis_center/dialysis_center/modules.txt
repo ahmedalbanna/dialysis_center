@@ -1,0 +1,8 @@
+Patient Management
+Appointment Scheduling
+Equipment Management
+Laboratory Management
+Billing Management
+Staff Management
+Inventory Management
+Insurance Management

@@ -1,0 +1,83 @@
+{
+ "charts": [
+  {
+   "chart_name": "Stock Movement",
+   "label": "Movement by Type"
+  },
+  {
+   "chart_name": "Stock Status",
+   "label": "Stock Status Distribution"
+  },
+  {
+   "chart_name": "Medication Usage Trend",
+   "label": "Usage Trend"
+  }
+ ],
+ "content": "[{\"id\":\"izn3pY8LWJ\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Inventory Management</span>\",\"col\":12}},{\"id\":\"cHCawpS_Og\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Movement by Type\",\"col\":12}},{\"id\":\"5PEe40xBwo\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Stock Status Distribution\",\"col\":12}},{\"id\":\"QWdZ_NFmrg\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Usage Trend\",\"col\":12}},{\"id\":\"ddz5BpgbvB\",\"type\":\"card\",\"data\":{\"card_name\":\"Stock\",\"col\":6}},{\"id\":\"wtZPFGeGIJ\",\"type\":\"card\",\"data\":{\"card_name\":\"Movement\",\"col\":6}}]",
+ "creation": "2026-02-20 00:10:40",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "stock",
+ "idx": 6,
+ "indicator_color": "",
+ "is_hidden": 0,
+ "label": "Inventory",
+ "links": [
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Stock",
+   "link_count": 0,
+   "link_to": "",
+   "link_type": "Page",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Medication",
+   "link_count": 0,
+   "link_to": "Medication",
+   "link_type": "DocType",
+   "onboard": 1,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Movement",
+   "link_count": 0,
+   "link_to": "",
+   "link_type": "Page",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Stock Movement",
+   "link_count": 0,
+   "link_to": "Stock Movement",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  }
+ ],
+ "modified": "2026-02-21 23:19:12.935713",
+ "modified_by": "Administrator",
+ "module": "Inventory Management",
+ "name": "Inventory",
+ "number_cards": [],
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [],
+ "sequence_id": 6.0,
+ "shortcuts": [],
+ "title": "Inventory"
+}

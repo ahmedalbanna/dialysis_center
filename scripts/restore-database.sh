@@ -111,15 +111,19 @@ restore_backup() {
     
     # Restore from backup
     echo_info "Restoring database from backup..."
-    zcat "$backup_file" | docker exec -i "$CONTAINER_NAME" mysql -u root -p"$MYSQL_ROOT_PASSWORD" "$DB_NAME"
+    docker exec -i "$CONTAINER_NAME" mysql -u root -p"$MYSQL_ROOT_PASSWORD" "$DB_NAME" < <(zcat "$backup_file")
     
     if [ $? -eq 0 ]; then
         echo_success "Database restored successfully!"
         
         # Verify restoration
         echo_info "Verifying restoration..."
-        TABLES=$(docker exec "$CONTAINER_NAME" mysql -u root -p"$MYSQL_ROOT_PASSWORD" -e "SELECT COUNT(*) FROM information_schema.tables WHERE table_schema = '$DB_NAME';" | tail -1)
-        echo_success "Tables restored: $TABLES"
+        TABLES=$(docker exec "$CONTAINER_NAME" mysql -u root -p"$MYSQL_ROOT_PASSWORD" -N -e "SELECT COUNT(*) FROM information_schema.tables WHERE table_schema = '$DB_NAME';" 2>/dev/null)
+        ROWS=$(docker exec "$CONTAINER_NAME" mysql -u root -p"$MYSQL_ROOT_PASSWORD" -N -e "SELECT SUM(TABLE_ROWS) FROM information_schema.tables WHERE table_schema = '$DB_NAME';" 2>/dev/null)
+        
+        echo_success "Database restored successfully!"
+        echo_success "Tables: $TABLES"
+        echo_success "Total Rows: $ROWS"
     else
         echo_error "Restore failed!"
     fi

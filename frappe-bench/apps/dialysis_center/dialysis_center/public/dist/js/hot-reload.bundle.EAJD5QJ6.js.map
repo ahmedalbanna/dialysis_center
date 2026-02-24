@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../../../../apps/dialysis_center/dialysis_center/public/js/hot-reload.bundle.js"],
+  "sourcesContent": ["// Dialysis Center Hot-Reload Bundle\n// Enables instant asset updates for the dialysis center app during development\n\nconsole.log(\"[Hot-Reload] Dialysis Center module loaded\");\n"],
+  "mappings": ";;AAGA,UAAQ,IAAI,4CAA4C;",
+  "names": []
+}
